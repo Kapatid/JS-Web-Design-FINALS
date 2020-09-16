@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>Home</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Web design project">
+  <meta name="keywords" content="HTML, CSS, SCSS, Bootstrap, JavaScript, JQuery">
+  <meta name="author" content="Nadji Tan">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Popper -->
+  <script type="text/javascript" src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <!-- Tippy -->
+  <link rel="stylesheet" href="node_modules/tippy.js/animations/shift-away.css">
+  <script type="text/javascript" src="node_modules/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <script type="text/javascript" src="js/custom/mainFunctions.js"></script>
+  <link rel="stylesheet" href="css/custom/mainStyles.css">
+  
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <!-- <div id="nav-placeholder"></div> -->
+  <nav class="navbar p-4 pl-5 pr-5 sticky-top navbar-expand-lg">
+    <a class="navbar-brand" href="#BRAND_LOGO"><img src="img/home/vectorstock_23639604.png" alt="BRAND"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" style="outline: none;">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse ml-2" id="navbarSupportedContent">
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="/index.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/html/store.html">Store</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link sign-log-button" href="/html/log_in.html">Signup/Login</a>
+          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+          <ul class="dropdown-menu dropdown-menu-xl-right" style="width: 200px;" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#ACCOUNT_SETTINGS">Account Settings</a></li>
+            <li><a class="dropdown-item" href="#SUPPORT">Support</a></li>
+            <li class="dropdown-divider"></li>
+            <li><a class="dropdown-item log-out-button" href="#LOG_OUT">Log out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- End Of Navigation bar -->
+  
+  <!-- Main Body -->
+  <div class="main-body">
+    <div class="container container-first">
+        <div class="col">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Main Body -->
+
+  <!-- Footer -->
+  <!-- <div id="footer-placeholder"></div> -->
+  <footer> 
+    <div class="card-body text-white">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div id="footerRowItems"> 
+            <h5 class="card-title">about</h5>  
+            <a class="card-link" href="#ABOUT_US">about us</a><br>
+            <a class="card-link" href="#PRIVACY_POLICY">privacy policy</a><br>
+            <a class="card-link" href="#TERMS_OF_SERVICE">terms of service</a>
+          </div>
+
+          <div id="footerRowItems"> 
+            <h5 class="card-title">help</h5>
+            <a class="card-link" href="#HELP_CENTER">help center</a><br>
+            <a class="card-link" href="#GET_STARTED">get started</a><br>
+            <a class="card-link" href="#CONTACT_US">contact us</a>
+          </div>
+
+          <div id="footerRowItems"> 
+            <h5 class="card-title text-uppercase">connect</h5>
+            <a id="socialMediaBtn" data-tippy-content="My LinkedIn">
+              <img src="./img/socialMedia/linkedin-PNG.png" style="width: 2.3rem;" alt="LinkedIn Logo">
+            </a>
+            <a id="socialMediaBtn" data-tippy-content="My Facebook">
+              <img src="./img/socialMedia/f_logo_RGB-White_72.png" alt="Facebook Logo">
+            </a>
+            <a id="socialMediaBtn" data-tippy-content="My Twitter">
+              <img src="./img/socialMedia/Twitter_Social_Icon_Circle_White.png" alt="Twitter Logo">
+            </a>
+            <a id="socialMediaBtn" data-tippy-content="My Instagram">
+              <img src="./img/socialMedia/IG-PNG.png" alt="Instagram Logo">
+            </a>
+            <a id="socialMediaBtn" data-tippy-content="My GitHub">
+              <img src="./img/socialMedia/GitHub-Mark-Light-64px.png" alt="GitHub Logo">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+    <div class="card-footer text-white rounded-0 bg-primary">
+      © 2020 Nadji Tan
+    </div>
+  </footer>
+  <!-- End Of Footer -->
+</body>
+
+</html>

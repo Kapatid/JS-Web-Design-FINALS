@@ -1,0 +1,170 @@
+$theme-colors: (
+    "primary": #2c6e49,
+    "secondary": #4c956c
+);
+
+@import "fonts";
+
+/* Bootstrap SCSS */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/* Custom SCSS */
+body {
+    font-family: "Archivo", sans-serif;
+
+    .main-body {
+        height: 100vh;
+        .container.container-first {
+            padding-top: 100px;
+            width:fit-content;
+            margin-right: 50%;
+        }
+    }
+}
+
+nav {
+    transition: background-color 0.2s ease-out;
+    transition: box-shadow 0.2s ease-out;
+    .navbar-brand {
+        font-size: xx-large;
+        font-weight: bold;
+        img{
+            width: 80px;
+        }
+    }
+    .nav-link {
+        font-size: 1.15rem;
+    }
+    .nav-link.active{
+        font-weight: bold;
+    }
+    .nav-link:hover, .nav-link:focus {
+        color: var(--primary);
+        font-weight: bold;
+    }
+    .navbar-toggler{
+        @extend .navbar-light;
+        border: black;
+    }
+    .dropdown-menu {
+        .dropdown-item{
+            color: var(--primary);
+        }
+        .dropdown-item:hover {
+            color: white;
+            background-color: var(--primary);
+        }
+    }
+}
+
+nav.scrolled {
+    box-shadow:
+        0 1.8px 4.3px rgba(0, 0, 0, 0.038),
+        0 6px 14.3px rgba(0, 0, 0, 0.047),
+        0 27px 64px rgba(0, 0, 0, 0.07);
+    background-color: white;
+}
+
+.sign-log-container {
+    margin-top: 40px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow:
+        0 2.7px 1.9px rgba(0, 0, 0, 0.022),
+        0 5.7px 4.6px rgba(0, 0, 0, 0.032),
+        0 9.5px 8.6px rgba(0, 0, 0, 0.04),
+        0 15.2px 15.4px rgba(0, 0, 0, 0.048),
+        0 26.6px 28.8px rgba(0, 0, 0, 0.058),
+        0 53px 69px rgba(0, 0, 0, 0.08);
+    width: 420px;
+    height: 500px;
+
+    .row {
+        justify-content: center;
+        h5 {
+            margin-top: 60px;
+            font-size: 3rem;
+        }
+    }
+
+    .txtbox-container {
+        background-color: rgba(128, 128, 128, 0.123);
+        border-radius: 5px;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    
+    .email-txtbox, .username-txtbox, .password-txtbox {
+        outline: none;
+        transition: border-bottom-color 0.2s ease-out;
+        border-color: transparent;
+        background-color: transparent;
+    }
+
+    .email-txtbox:hover, .username-txtbox:hover, .password-txtbox:hover {
+        border-bottom-color: green;
+    }
+
+    .log-in-button {
+        @extend .p-2,
+                .bg-primary;
+        color: white;
+        width: 100px;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+footer {
+    @extend
+        .card,
+        .text-center,
+        .border-0,
+        .rounded-0 ,
+        .bg-primary;
+    
+    h5, a{
+        color:white;
+    }
+
+    h5{
+        text-transform:uppercase;
+        font-weight: bold;
+    }
+
+    a{
+        text-transform:capitalize;
+        padding: 0rem;
+        
+    }
+
+    a:hover{
+        color: white;
+        font-weight: bold;
+    }
+
+    #footerRowItems {
+        @extend
+            .col-md-3, 
+            .col-auto, 
+            .text-left,
+            .p-1;
+        #socialMediaBtn {
+            @extend 
+                .btn,
+                .m-0,
+                .p-0;
+        }
+        img{
+            width: 2rem;
+        }
+    }
+}
+
+
+
+
+
+
+
+
