@@ -12,6 +12,9 @@
   },
   "author": "Nadji Tan & Matthew Ocampo",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kapatid/JS-Web-Design-FINALS/issues"
+  },
   "dependencies": {
     "@popperjs/core": "^2.4.4",
     "bootstrap": "^4.5.2",

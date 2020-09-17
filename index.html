@@ -39,21 +39,21 @@
     <div class="collapse navbar-collapse ml-2" id="navbarSupportedContent">
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="/index.html">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link active" href="index.html">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/html/store.html">Store</a>
+          <a class="nav-link" href="html/store.html">Store</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link sign-log-button" href="/html/log_in.html">Signup/Login</a>
-          </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item" id="navLoginSignup">
+          <a class="nav-link sign-log-button" href="html/log_in.html">Signup/Login</a>
+        </li>
+        <li class="nav-item dropdown" id="accountDropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
           <ul class="dropdown-menu dropdown-menu-xl-right" style="width: 200px;" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#ACCOUNT_SETTINGS">Account Settings</a></li>
             <li><a class="dropdown-item" href="#SUPPORT">Support</a></li>
             <li class="dropdown-divider"></li>
-            <li><a class="dropdown-item log-out-button" href="#LOG_OUT">Log out</a></li>
+            <li><a class="dropdown-item" id="logoutButton">Log out</a></li>
           </ul>
         </li>
       </ul>
@@ -93,20 +93,20 @@
 
           <div id="footerRowItems"> 
             <h5 class="card-title text-uppercase">connect</h5>
-            <a id="socialMediaBtn" data-tippy-content="My LinkedIn">
-              <img src="./img/socialMedia/linkedin-PNG.png" style="width: 2.3rem;" alt="LinkedIn Logo">
+            <a id="socialMediaBtn" data-tippy-content="LinkedIn">
+              <img src="../img/socialMedia/linkedin-PNG.png" style="width: 2.3rem;" alt="LinkedIn Logo">
             </a>
-            <a id="socialMediaBtn" data-tippy-content="My Facebook">
-              <img src="./img/socialMedia/f_logo_RGB-White_72.png" alt="Facebook Logo">
+            <a id="socialMediaBtn" data-tippy-content="Facebook">
+              <img src="../img/socialMedia/f_logo_RGB-White_72.png" alt="Facebook Logo">
             </a>
-            <a id="socialMediaBtn" data-tippy-content="My Twitter">
-              <img src="./img/socialMedia/Twitter_Social_Icon_Circle_White.png" alt="Twitter Logo">
+            <a id="socialMediaBtn" data-tippy-content="Twitter">
+              <img src="../img/socialMedia/Twitter_Social_Icon_Circle_White.png" alt="Twitter Logo">
             </a>
-            <a id="socialMediaBtn" data-tippy-content="My Instagram">
-              <img src="./img/socialMedia/IG-PNG.png" alt="Instagram Logo">
+            <a id="socialMediaBtn" data-tippy-content="Instagram">
+              <img src="../img/socialMedia/IG-PNG.png" alt="Instagram Logo">
             </a>
-            <a id="socialMediaBtn" data-tippy-content="My GitHub">
-              <img src="./img/socialMedia/GitHub-Mark-Light-64px.png" alt="GitHub Logo">
+            <a id="socialMediaBtn" data-tippy-content="GitHub">
+              <img src="../img/socialMedia/GitHub-Mark-Light-64px.png" alt="GitHub Logo">
             </a>
           </div>
         </div>
@@ -114,7 +114,7 @@
     </div>  
 
     <div class="card-footer text-white rounded-0 bg-primary">
-      © 2020 Nadji Tan
+      © 2020 SomeStudents
     </div>
   </footer>
   <!-- End Of Footer -->

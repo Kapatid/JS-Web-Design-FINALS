@@ -12,18 +12,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- JQuery -->
-  <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Popper -->
-  <script type="text/javascript" src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script type="text/javascript" src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
   <!-- Tippy -->
-  <link rel="stylesheet" href="/node_modules/tippy.js/animations/shift-away.css">
-  <script type="text/javascript" src="/node_modules/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+  <link rel="stylesheet" href="../node_modules/tippy.js/animations/shift-away.css">
+  <script type="text/javascript" src="../node_modules/tippy.js/dist/tippy-bundle.umd.min.js"></script>
   <!-- Custom CSS & JS -->
-  <script type="text/javascript" src="/js/custom/mainFunctions.js"></script>
-  <link rel="stylesheet" href="/css/custom/mainStyles.css">
+  <script type="text/javascript" src="../js/custom/mainFunctions.js"></script>
+  <script type="text/javascript" src="../js/custom/forms.js"></script>
+  <link rel="stylesheet" href="../css/custom/mainStyles.css">
   
 </head>
 
@@ -31,7 +32,7 @@
   <!-- Navigation bar -->
   <!-- <div id="nav-placeholder"></div> -->
   <nav class="navbar p-4 pl-5 pr-5 sticky-top navbar-expand-lg">
-    <a class="navbar-brand" href="#BRAND_LOGO"><img src="img/home/vectorstock_23639604.png" alt="BRAND"></a>
+    <a class="navbar-brand" href="#BRAND_LOGO"><img src="#" alt="BRAND"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" style="outline: none;">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,21 +40,21 @@
     <div class="collapse navbar-collapse ml-2" id="navbarSupportedContent">
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/index.html">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../index.html">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/html/store.html">Store</a>
+          <a class="nav-link" href="store.html">Store</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link sign-log-button active" href="/html/log_in.html">Signup/Login</a>
-          </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item" id="navLoginSignup">
+            <a class="nav-link sign-log-button active" href="log_in.html">Signup/Login</a>
+        </li>
+        <li class="nav-item dropdown" id="accountDropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
           <ul class="dropdown-menu dropdown-menu-xl-right" style="width: 200px;" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#ACCOUNT_SETTINGS">Account Settings</a></li>
             <li><a class="dropdown-item" href="#SUPPORT">Support</a></li>
             <li class="dropdown-divider"></li>
-            <li><a class="dropdown-item log-out-button" href="#LOG_OUT">Log out</a></li>
+            <li><a class="dropdown-item" id="logoutButton">Log out</a></li>
           </ul>
         </li>
       </ul>
@@ -69,20 +70,17 @@
         </div>
         <form>
           <div class="row mt-5 p-2 txtbox-container">
-            <input class="email-txtbox" type="text" maxLength="15" placeholder="Email"/>
+            <input class="username-txtbox" id="username" type="text" required="" maxLength="15" placeholder="Username"/>
           </div>
           <div class="row mt-4 p-2 txtbox-container">
-            <input class="username-txtbox" type="text" maxLength="15" placeholder="Username"/>
+            <input class="password-txtbox" id="password" type="password" required="" maxLength="20" placeholder="Password"/>
           </div>
-          <div class="row mt-4 p-2 txtbox-container">
-            <input class="password-txtbox" type="text" maxLength="20" placeholder="Password"/>
-          </div>
-          <div class="row mt-4">
-            <input class="log-in-button" type="button" value="Sign up"/>
+          <div class="row mt-5">
+            <button class="log-in-button" onclick="GetInputValue()" type="submit">Sign up</button>
           </div>
         </form>
-        <div class="row mt-4 ">
-          Already an account? &nbsp; <a class="nav-link p-0" href="/html/log_in.html">Log in</a>
+        <div class="row mt-5 ">
+          Already an account? &nbsp; <a class="nav-link p-0" href="../html/log_in.html">Log in</a>
         </div>
       </div>
     </div>
@@ -111,20 +109,20 @@
 
           <div id="footerRowItems"> 
             <h5 class="card-title text-uppercase">connect</h5>
-            <a id="socialMediaBtn" data-tippy-content="My LinkedIn">
-              <img src="/img/socialMedia/linkedin-PNG.png" style="width: 2.3rem;" alt="LinkedIn Logo">
+            <a id="socialMediaBtn" data-tippy-content="LinkedIn">
+              <img src="../img/socialMedia/linkedin-PNG.png" style="width: 2.3rem;" alt="LinkedIn Logo">
             </a>
-            <a id="socialMediaBtn" data-tippy-content="My Facebook">
-              <img src="/img/socialMedia/f_logo_RGB-White_72.png" alt="Facebook Logo">
+            <a id="socialMediaBtn" data-tippy-content="Facebook">
+              <img src="../img/socialMedia/f_logo_RGB-White_72.png" alt="Facebook Logo">
             </a>
-            <a id="socialMediaBtn" data-tippy-content="My Twitter">
-              <img src="/img/socialMedia/Twitter_Social_Icon_Circle_White.png" alt="Twitter Logo">
+            <a id="socialMediaBtn" data-tippy-content="Twitter">
+              <img src="../img/socialMedia/Twitter_Social_Icon_Circle_White.png" alt="Twitter Logo">
             </a>
-            <a id="socialMediaBtn" data-tippy-content="My Instagram">
-              <img src="/img/socialMedia/IG-PNG.png" alt="Instagram Logo">
+            <a id="socialMediaBtn" data-tippy-content="Instagram">
+              <img src="../img/socialMedia/IG-PNG.png" alt="Instagram Logo">
             </a>
-            <a id="socialMediaBtn" data-tippy-content="My GitHub">
-              <img src="/img/socialMedia/GitHub-Mark-Light-64px.png" alt="GitHub Logo">
+            <a id="socialMediaBtn" data-tippy-content="GitHub">
+              <img src="../img/socialMedia/GitHub-Mark-Light-64px.png" alt="GitHub Logo">
             </a>
           </div>
         </div>
@@ -132,7 +130,7 @@
     </div>  
 
     <div class="card-footer text-white rounded-0 bg-primary">
-      © 2020 Nadji Tan
+      © 2020 SomeStudents
     </div>
   </footer>
   <!-- End Of Footer -->
