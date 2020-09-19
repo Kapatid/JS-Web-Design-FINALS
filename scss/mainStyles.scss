@@ -94,14 +94,14 @@ nav.scrolled {
         margin-right: 80px;
     }
     
-    .email-txtbox, .username-txtbox, .password-txtbox {
+    .username-txtbox, .password-txtbox {
         outline: none;
         transition: border-bottom-color 0.2s ease-out;
         border-color: transparent;
         background-color: transparent;
     }
 
-    .email-txtbox:hover, .username-txtbox:hover, .password-txtbox:hover {
+    .username-txtbox:hover, .password-txtbox:hover {
         border-bottom-color: green;
     }
 

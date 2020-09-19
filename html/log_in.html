@@ -70,13 +70,15 @@
         </div>
         <form>
           <div class="row mt-5 p-2 txtbox-container">
-            <input class="username-txtbox" id="username" type="text" required="" maxLength="15" placeholder="Username"/>
+            <input class="username-txtbox" id="username" type="text" required="" maxLength="15" placeholder="Username" 
+              onfocus="$('.username-txtbox').css({'border-bottom-color': 'green'})" onblur="$('.username-txtbox').css({'border-bottom-color': 'transparent'})"/>
           </div>
           <div class="row mt-4 p-2 txtbox-container">
-            <input class="password-txtbox" id="password" type="password" required="" maxLength="20" placeholder="Password"/>
+            <input class="password-txtbox" id="password" type="password" required="" maxLength="20" placeholder="Password" 
+              onfocus="$('.password-txtbox').css({'border-bottom-color': 'green'})" onblur="$('.password-txtbox').css({'border-bottom-color': 'transparent'})"/>
           </div>
           <div class="row mt-5">
-            <button class="log-in-button" onclick="GetInputValue()" type="submit">Login</button>
+            <button class="log-in-button" id="logBtn" onclick="GetInputValue()" type="button">Login</button>
           </div>
         </form>
         <div class="row mt-5 ">
