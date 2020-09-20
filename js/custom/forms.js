@@ -26,7 +26,7 @@ function GetInputValue() {
     username = document.getElementById("username").value
     password = document.getElementById("password").value
 
-    InputNewAccount(username, password)
+    CreateNewAccount(username, password)
   }
 
   if (sPage == "log_in.html"){
@@ -34,16 +34,10 @@ function GetInputValue() {
     password = document.getElementById("password").value
 
     SearchAccounts(username, password)  
-    
-    localStorage.setItem('loggedin', JSON.stringify(currently_loggedin)) || []  /* Save */
   }
 }
 
-function ChangePage() {
-  window.location.pathname ='../index.html'
-} 
-
-function InputNewAccount(name, pass){
+function CreateNewAccount(name, pass){
   var notValidUsername = regexUsername.test(name);
   var notValidPassword = regexPassword.test(pass);
 
@@ -83,7 +77,8 @@ function SearchAccounts(name, pass){
     currently_loggedin.password = this.password
     
     alert("You are now logged in.")
-    ChangePage()
+    localStorage.setItem('loggedin', JSON.stringify(currently_loggedin)) || []  /* Save */
+    window.location.href ='../index.html'
   }
   
 }   

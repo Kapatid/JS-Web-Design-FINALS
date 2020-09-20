@@ -9707,6 +9707,13 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 /* Custom SCSS */
+/* .preload * {
+    transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    -webkit-transition: none !important;
+}
+ */
 body {
   font-family: "Archivo", sans-serif;
 }
@@ -9791,14 +9798,14 @@ nav.scrolled {
   margin-right: 80px;
 }
 
-.sign-log-container .email-txtbox, .sign-log-container .username-txtbox, .sign-log-container .password-txtbox {
+.sign-log-container .username-txtbox, .sign-log-container .password-txtbox {
   outline: none;
   transition: border-bottom-color 0.2s ease-out;
   border-color: transparent;
   background-color: transparent;
 }
 
-.sign-log-container .email-txtbox:hover, .sign-log-container .username-txtbox:hover, .sign-log-container .password-txtbox:hover {
+.sign-log-container .username-txtbox:hover, .sign-log-container .password-txtbox:hover {
   border-bottom-color: green;
 }
 

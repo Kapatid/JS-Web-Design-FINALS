@@ -9,6 +9,13 @@ $theme-colors: (
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 /* Custom SCSS */
+/* .preload * {
+    transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    -webkit-transition: none !important;
+}
+ */
 body {
     font-family: "Archivo", sans-serif;
 

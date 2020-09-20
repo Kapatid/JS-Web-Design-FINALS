@@ -1,16 +1,10 @@
-$(function(){
-    /* Unused because of CORS policy when files are not on a server */
-    /* $("#nav-placeholder").load("./common/navbar.html");
-    $("#footer-placeholder").load("./common/footer.html"); 
 
-    $.getJSON('../common/users.json', (data) => {
-        $.each(data, (i, user) => {
-            console.log(`username: ${user.username} password: ${user.password} \n`)
-        })
-    })*/
+document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
+window.addEventListener("load", pageFullyLoaded, false);
 
-    let username;
-    let stored_loggedin = JSON.parse(localStorage.getItem('loggedin')) || []; /* Retrieve */
+function theDomHasLoaded(e) {
+    var username;
+    var stored_loggedin = JSON.parse(localStorage.getItem('loggedin')) || []; /* Retrieve */
 
     if(stored_loggedin.username != null && stored_loggedin.acc_found == true){
         username = stored_loggedin.username;
@@ -22,6 +16,10 @@ $(function(){
         $('#accountDropdown').hide()
         $('#navbarDropdown').text('Account')
     }
+
+}
+
+function pageFullyLoaded(e) {
 
     $('#logoutButton').on('click', LogOut)
 
@@ -40,4 +38,18 @@ $(function(){
         placement: 'bottom',
         animation: 'shift-away'
     });
+}
+
+$(function(){
+    /* Unused because of CORS policy when files are not on a server */
+    /* $("#nav-placeholder").load("./common/navbar.html");
+    $("#footer-placeholder").load("./common/footer.html"); 
+
+    $.getJSON('../common/users.json', (data) => {
+        $.each(data, (i, user) => {
+            console.log(`username: ${user.username} password: ${user.password} \n`)
+        })
+    })*/
+    
+    
 });
