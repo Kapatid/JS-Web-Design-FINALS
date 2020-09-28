@@ -1,52 +1,11 @@
 
-document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
 window.addEventListener("load", pageFullyLoaded, false);
 
-function theDomHasLoaded(e) {
-    var username;
-    var stored_loggedin = JSON.parse(localStorage.getItem('loggedin')) || []; /* Retrieve */
-
-    if(stored_loggedin.username != null && stored_loggedin.acc_found == true){
-        username = stored_loggedin.username;
-        $('#navLoginSignup').hide()
-        $('#accountDropdown').show()
-        $('#navbarDropdown').text(username)
-    } else {
-        $('#navLoginSignup').show()
-        $('#accountDropdown').hide()
-        $('#navbarDropdown').text('Account')
-    }
-
-    $("body").removeClass("preload");
-
-    // Immediately add events on add item to cart buttons
+function pageFullyLoaded(e) {
     $('.btn-add').on('click', addItem)
     $('.btn-buy').on('click', buyItems)
 }
 
-function pageFullyLoaded(e) {
-    $('#logoutButton').on('click', LogOut)
-
-    function LogOut(){
-        var reset_values = {};
-        localStorage.setItem('loggedin', JSON.stringify(reset_values)) || [];  /* Save */
-        location = location;
-        location.reload()
-      }
-
-    $(window).on('scroll', () => {
-        $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
-    });
-
-    tippy('#socialMediaBtn', {
-        placement: 'bottom',
-        animation: 'shift-away'
-    });
-
-    updateCartTotal()
-}
-
-// #region STORE FUNCTIONS 
 function removeItem(event) {
     // Get current hierarchy/place of where the button is clicked
     let buttonClicked = event.target
@@ -149,5 +108,4 @@ function buyItems() {
     alert(`Thank you for buying from our store! \u{1F604}`) 
     updateCartTotal()
 }
-// #endregion
 
