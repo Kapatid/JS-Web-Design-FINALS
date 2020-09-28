@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
 window.addEventListener("load", pageFullyLoaded, false);
 
@@ -17,6 +16,7 @@ function theDomHasLoaded(e) {
         $('#navbarDropdown').text('Account')
     }
 
+    $("body").removeClass("preload");
 }
 
 function pageFullyLoaded(e) {
@@ -40,16 +40,17 @@ function pageFullyLoaded(e) {
     });
 }
 
-$(function(){
-    /* Unused because of CORS policy when files are not on a server */
-    /* $("#nav-placeholder").load("./common/navbar.html");
+/* $(function(){
+    // Unused because of CORS policy when files are not on a server 
+    $("#nav-placeholder").load("./common/navbar.html");
     $("#footer-placeholder").load("./common/footer.html"); 
 
     $.getJSON('../common/users.json', (data) => {
         $.each(data, (i, user) => {
             console.log(`username: ${user.username} password: ${user.password} \n`)
         })
-    })*/
+    })
     
     
 });
+ */

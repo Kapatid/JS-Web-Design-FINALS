@@ -2395,40 +2395,42 @@ footer #footerRowItems fieldset:disabled a#socialMediaBtn {
   box-shadow: 0 0 0 0.2rem rgba(103, 165, 130, 0.5);
 }
 
-.btn-success {
+.btn-success, body .main-body .container.store-container .store-items .btn-add {
   color: #fff;
   background-color: #28a745;
   border-color: #28a745;
 }
 
-.btn-success:hover {
+.btn-success:hover, body .main-body .container.store-container .store-items .btn-add:hover {
   color: #fff;
   background-color: #218838;
   border-color: #1e7e34;
 }
 
-.btn-success:focus, .btn-success.focus {
+.btn-success:focus, body .main-body .container.store-container .store-items .btn-add:focus, .btn-success.focus, body .main-body .container.store-container .store-items .focus.btn-add {
   color: #fff;
   background-color: #218838;
   border-color: #1e7e34;
   box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
 }
 
-.btn-success.disabled, .btn-success:disabled {
+.btn-success.disabled, body .main-body .container.store-container .store-items .disabled.btn-add, .btn-success:disabled, body .main-body .container.store-container .store-items .btn-add:disabled {
   color: #fff;
   background-color: #28a745;
   border-color: #28a745;
 }
 
-.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
-.show > .btn-success.dropdown-toggle {
+.btn-success:not(:disabled):not(.disabled):active, body .main-body .container.store-container .store-items .btn-add:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active, body .main-body .container.store-container .store-items .btn-add:not(:disabled):not(.disabled).active,
+.show > .btn-success.dropdown-toggle,
+body .main-body .container.store-container .store-items .show > .dropdown-toggle.btn-add {
   color: #fff;
   background-color: #1e7e34;
   border-color: #1c7430;
 }
 
-.btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
-.show > .btn-success.dropdown-toggle:focus {
+.btn-success:not(:disabled):not(.disabled):active:focus, body .main-body .container.store-container .store-items .btn-add:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus, body .main-body .container.store-container .store-items .btn-add:not(:disabled):not(.disabled).active:focus,
+.show > .btn-success.dropdown-toggle:focus,
+body .main-body .container.store-container .store-items .show > .dropdown-toggle.btn-add:focus {
   box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
 }
 
@@ -6346,15 +6348,15 @@ a.close.disabled {
   vertical-align: text-top !important;
 }
 
-.bg-primary, .sign-log-container .log-in-button, footer {
+.bg-primary, body .main-body .sign-log-container .log-in-button, footer {
   background-color: #2c6e49 !important;
 }
 
-a.bg-primary:hover, .sign-log-container a.log-in-button:hover, a.bg-primary:focus, .sign-log-container a.log-in-button:focus,
+a.bg-primary:hover, body .main-body .sign-log-container a.log-in-button:hover, a.bg-primary:focus, body .main-body .sign-log-container a.log-in-button:focus,
 button.bg-primary:hover,
-.sign-log-container button.log-in-button:hover,
+body .main-body .sign-log-container button.log-in-button:hover,
 button.bg-primary:focus,
-.sign-log-container button.log-in-button:focus {
+body .main-body .sign-log-container button.log-in-button:focus {
   background-color: #1d4a31 !important;
 }
 
@@ -7648,7 +7650,7 @@ button.bg-dark:focus {
   margin: 1rem !important;
 }
 
-.mt-3,
+.mt-3, body .main-body .store-cart .card-body > .card, body .main-body .store-cart .card-body > footer,
 .my-3 {
   margin-top: 1rem !important;
 }
@@ -7716,7 +7718,7 @@ button.bg-dark:focus {
   margin-left: 3rem !important;
 }
 
-.p-0, footer #footerRowItems #socialMediaBtn {
+.p-0, body .main-body .store-cart .card-body > .card, body .main-body .store-cart .card-body > footer, footer #footerRowItems #socialMediaBtn {
   padding: 0 !important;
 }
 
@@ -7764,7 +7766,7 @@ button.bg-dark:focus {
   padding-left: 0.25rem !important;
 }
 
-.p-2, .sign-log-container .log-in-button {
+.p-2, body .main-body .sign-log-container .log-in-button {
   padding: 0.5rem !important;
 }
 
@@ -9707,25 +9709,11 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 /* Custom SCSS */
-/* .preload * {
-    transition: none !important;
-    -moz-transition: none !important;
-    -o-transition: none !important;
-    -webkit-transition: none !important;
-}
- */
-body {
-  font-family: "Archivo", sans-serif;
-}
-
-body .main-body {
-  height: 100vh;
-}
-
-body .main-body .container.container-first {
-  padding-top: 100px;
-  width: fit-content;
-  margin-right: 50%;
+.preload * {
+  transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -webkit-transition: none !important;
 }
 
 nav {
@@ -9750,7 +9738,8 @@ nav .nav-link.active {
   font-weight: bold;
 }
 
-nav .nav-link:hover, nav .nav-link:focus {
+nav .nav-link:hover,
+nav .nav-link:focus {
   color: var(--primary);
   font-weight: bold;
 }
@@ -9773,8 +9762,20 @@ nav.scrolled {
   background-color: white;
 }
 
-.sign-log-container {
-  margin-top: 40px;
+body {
+  font-family: "Archivo", sans-serif;
+}
+
+body .main-body {
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+
+body .main-body .container {
+  width: fit-content;
+}
+
+body .main-body .sign-log-container {
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 2.7px 1.9px rgba(0, 0, 0, 0.022), 0 5.7px 4.6px rgba(0, 0, 0, 0.032), 0 9.5px 8.6px rgba(0, 0, 0, 0.04), 0 15.2px 15.4px rgba(0, 0, 0, 0.048), 0 26.6px 28.8px rgba(0, 0, 0, 0.058), 0 53px 69px rgba(0, 0, 0, 0.08);
@@ -9782,38 +9783,85 @@ nav.scrolled {
   height: 500px;
 }
 
-.sign-log-container .row {
+body .main-body .sign-log-container .row {
   justify-content: center;
 }
 
-.sign-log-container .row h5 {
+body .main-body .sign-log-container .row h5 {
   margin-top: 60px;
   font-size: 3rem;
 }
 
-.sign-log-container .txtbox-container {
+body .main-body .sign-log-container .txtbox-container {
   background-color: rgba(128, 128, 128, 0.123);
   border-radius: 5px;
   margin-left: 80px;
   margin-right: 80px;
 }
 
-.sign-log-container .username-txtbox, .sign-log-container .password-txtbox {
+body .main-body .sign-log-container .username-txtbox,
+body .main-body .sign-log-container .password-txtbox {
   outline: none;
   transition: border-bottom-color 0.2s ease-out;
   border-color: transparent;
   background-color: transparent;
 }
 
-.sign-log-container .username-txtbox:hover, .sign-log-container .password-txtbox:hover {
+body .main-body .sign-log-container .username-txtbox:hover,
+body .main-body .sign-log-container .password-txtbox:hover,
+body .main-body .sign-log-container .username-txtbox:focus,
+body .main-body .sign-log-container .password-txtbox:focus {
   border-bottom-color: green;
 }
 
-.sign-log-container .log-in-button {
+body .main-body .sign-log-container .log-in-button {
   color: white;
   width: 100px;
   border: none;
   border-radius: 5px;
+}
+
+body .main-body .container.store-container .store-items .btn-add {
+  border: none;
+  background-color: var(--primary);
+  border-radius: 5px;
+  outline: none;
+  margin-left: auto;
+  padding: 6px;
+  font-size: 0.85rem;
+}
+
+body .main-body .store-cart {
+  height: fit-content;
+  width: 340px;
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 18.8px 23.7px rgba(0, 0, 0, 0.039), 0 16.3px 33.3px rgba(0, 0, 0, 0.042), 0 9.5px 44.1px rgba(0, 0, 0, 0.04), 0 5px 63.8px rgba(0, 0, 0, 0.041), 0 11px 104.5px rgba(0, 0, 0, 0.054), 0 100px 224px rgba(0, 0, 0, 0.15);
+}
+
+body .main-body .store-cart .btn-remove,
+body .main-body .store-cart .btn-buy {
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+body .main-body .store-cart .btn-buy {
+  margin-left: 42.5%;
+}
+
+body .main-body .store-cart .btn-remove {
+  margin-left: 100px;
+}
+
+body .main-body .store-cart .cart-item-quantity {
+  width: 50px;
+  margin-left: 2px;
+}
+
+body .main-body .store-cart .cart-item-row {
+  align-items: center;
+  color: black;
 }
 
 footer h5, footer a {

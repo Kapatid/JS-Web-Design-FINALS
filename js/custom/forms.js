@@ -43,10 +43,12 @@ function CreateNewAccount(name, pass){
 
   if (name == "" || pass == "") {
     alert(`Please complete form.`)
+    return
   } 
 
   if (notValidUsername || notValidPassword) {
     alert(`Username or password not valid.`)
+    return
   } 
   
   if (!notValidUsername && !notValidPassword && name != "" && pass != "") {
@@ -58,6 +60,11 @@ function CreateNewAccount(name, pass){
 }
 
 function SearchAccounts(name, pass){
+  if (name == "" || pass == "") {
+    alert(`Please complete form.`)
+    return
+  } 
+
   try{
     for (let i = 0; i <= this.stored_accounts.length; i++) {
       if (name == stored_accounts[i].un && pass == stored_accounts[i].pw){

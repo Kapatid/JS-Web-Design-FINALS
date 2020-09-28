@@ -23,7 +23,7 @@
   <script type="text/javascript" src="../node_modules/tippy.js/dist/tippy-bundle.umd.min.js"></script>
   <!-- Custom CSS & JS -->
   <link rel="stylesheet" href="../css/custom/mainStyles.css">
-  <script type="text/javascript" src="../js/custom/mainFunctions.js"></script>
+  <script type="text/javascript" src="../js/custom/store.js"></script>
   
 </head>
 
@@ -63,11 +63,72 @@
   
   <!-- Main Body -->
   <div class="main-body">
-    <div class="container container-first">
-        <div class="col">
+    <div class="row m-0 p-0">
+      <div class="container store-container"> 
+        <div class="store-items row">
+          <div class="col mb-2">
+            <div class="card">
+              <img src="../img/store/agave.jpg" class="item-img card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="item-name card-title">Agave</h5>
+                <p class="item-price card-text">Price: ₱150</p>
+                <button class="btn-add">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col mb-2">
+            <div class="card">
+              <img src="../img/store/boston_fern.jpg" class="item-img card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="item-name card-title">Boston Fern</h5>
+                <p class="item-price card-text">Price: ₱100</p>
+                <button class="btn-add">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col mb-2">
+            <div class="card">
+              <img src="../img/store/kalachuchi.jpg" class="item-img card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="item-name card-title">Kalachuchi</h5>
+                <p class="item-price card-text">Price: ₱300</p>
+                <button class="btn-add">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col mb-2">
+            <div class="card">
+              <img src="../img/store/sanseviera.jpg" class="item-img card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="item-name card-title">Sanseviera</h5>
+                <p class="item-price card-text">Price: ₱100</p>
+                <button class="btn-add">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="store-cart card">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">CHECKOUT</h5>
+
+            <div class="cart-item-rows">
+              
+            </div>
+            <br/>
+
+            <h5 class="cart-total-price card-title" style="text-align: center;">Total: </h5>
+            <button class="btn-buy btn-success pl-2 pr-2">BUY</button>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
   <!-- End of Main Body -->
 

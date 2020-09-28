@@ -9,24 +9,11 @@ $theme-colors: (
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 /* Custom SCSS */
-/* .preload * {
+.preload * {
     transition: none !important;
     -moz-transition: none !important;
     -o-transition: none !important;
     -webkit-transition: none !important;
-}
- */
-body {
-    font-family: "Archivo", sans-serif;
-
-    .main-body {
-        height: 100vh;
-        .container.container-first {
-            padding-top: 100px;
-            width:fit-content;
-            margin-right: 50%;
-        }
-    }
 }
 
 nav {
@@ -45,7 +32,8 @@ nav {
     .nav-link.active{
         font-weight: bold;
     }
-    .nav-link:hover, .nav-link:focus {
+    .nav-link:hover, 
+    .nav-link:focus {
         color: var(--primary);
         font-weight: bold;
     }
@@ -72,55 +60,136 @@ nav.scrolled {
     background-color: white;
 }
 
-.sign-log-container {
-    margin-top: 40px;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow:
-        0 2.7px 1.9px rgba(0, 0, 0, 0.022),
-        0 5.7px 4.6px rgba(0, 0, 0, 0.032),
-        0 9.5px 8.6px rgba(0, 0, 0, 0.04),
-        0 15.2px 15.4px rgba(0, 0, 0, 0.048),
-        0 26.6px 28.8px rgba(0, 0, 0, 0.058),
-        0 53px 69px rgba(0, 0, 0, 0.08);
-    width: 420px;
-    height: 500px;
+body {
+    font-family: "Archivo", sans-serif;
 
-    .row {
-        justify-content: center;
-        h5 {
-            margin-top: 60px;
-            font-size: 3rem;
+    .main-body {
+        margin-top: 80px;
+        margin-bottom: 100px;
+        .container {
+            width:fit-content;
+        }
+
+        // LOG IN & SIGN UP PAGE STYLES
+        .sign-log-container {
+            border-radius: 10px;
+            background-color: white;
+            box-shadow:
+                0 2.7px 1.9px rgba(0, 0, 0, 0.022),
+                0 5.7px 4.6px rgba(0, 0, 0, 0.032),
+                0 9.5px 8.6px rgba(0, 0, 0, 0.04),
+                0 15.2px 15.4px rgba(0, 0, 0, 0.048),
+                0 26.6px 28.8px rgba(0, 0, 0, 0.058),
+                0 53px 69px rgba(0, 0, 0, 0.08);
+            width: 420px;
+            height: 500px;
+        
+            .row {
+                justify-content: center;
+                h5 {
+                    margin-top: 60px;
+                    font-size: 3rem;
+                }
+            }
+        
+            .txtbox-container {
+                background-color: rgba(128, 128, 128, 0.123);
+                border-radius: 5px;
+                margin-left: 80px;
+                margin-right: 80px;
+            }
+            
+            .username-txtbox, 
+            .password-txtbox {
+                outline: none;
+                transition: border-bottom-color 0.2s ease-out;
+                border-color: transparent;
+                background-color: transparent;
+            }
+        
+            .username-txtbox:hover, 
+            .password-txtbox:hover, 
+            .username-txtbox:focus, 
+            .password-txtbox:focus {
+                border-bottom-color: green;
+            }
+        
+            .log-in-button {
+                @extend .p-2,
+                        .bg-primary;
+                color: white;
+                width: 100px;
+                border: none;
+                border-radius: 5px;
+            }
+        }
+        
+        // STORE PAGE STYLES
+        .container.store-container{
+            .store-items {
+                .btn-add {
+                    @extend .btn-success;
+                    border: none;
+                    background-color: var(--primary);
+                    border-radius: 5px;
+                    outline: none;
+                    margin-left: auto;
+                    padding: 6px;
+                    font-size: 0.85rem;
+                }
+            }
+        }
+
+        .store-cart {
+            height: fit-content;
+            width: 340px;
+            background-color: var(--primary);
+            color: white;
+            box-shadow:
+                0 18.8px 23.7px rgba(0, 0, 0, 0.039),
+                0 16.3px 33.3px rgba(0, 0, 0, 0.042),
+                0 9.5px 44.1px rgba(0, 0, 0, 0.04),
+                0 5px 63.8px rgba(0, 0, 0, 0.041),
+                0 11px 104.5px rgba(0, 0, 0, 0.054),
+                0 100px 224px rgba(0, 0, 0, 0.15)
+            ;
+
+            .card-body > .card {
+                @extend .mt-3,
+                        .p-0;
+            }
+
+            .btn-remove, 
+            .btn-buy {
+                border: none;
+                border-radius: 4px;
+                outline: none;
+            }
+
+            .btn-buy {
+                margin-left: 42.5%;
+            }
+
+            .btn-remove {
+                margin-left: 100px;
+            }
+
+            .cart-item-quantity {
+                width: 50px;
+                margin-left: 2px;
+            }
+
+            .cart-item-row {
+                align-items:center; 
+                color: black;
+            }
         }
     }
-
-    .txtbox-container {
-        background-color: rgba(128, 128, 128, 0.123);
-        border-radius: 5px;
-        margin-left: 80px;
-        margin-right: 80px;
-    }
     
-    .username-txtbox, .password-txtbox {
-        outline: none;
-        transition: border-bottom-color 0.2s ease-out;
-        border-color: transparent;
-        background-color: transparent;
-    }
 
-    .username-txtbox:hover, .password-txtbox:hover {
-        border-bottom-color: green;
-    }
-
-    .log-in-button {
-        @extend .p-2,
-                .bg-primary;
-        color: white;
-        width: 100px;
-        border: none;
-        border-radius: 5px;
-    }
 }
+
+
 
 footer {
     @extend
