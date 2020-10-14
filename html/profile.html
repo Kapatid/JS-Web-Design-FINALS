@@ -24,6 +24,7 @@
   <!-- Custom CSS & JS -->
   <link rel="stylesheet" href="../css/custom/mainStyles.css">
   <script type="text/javascript" src="../js/custom/mainFunctions.js"></script>
+  <script type="text/javascript" src="../js/custom/profile.js"></script>
   
 </head>
 
@@ -48,9 +49,9 @@
           <a class="nav-link sign-log-button active" href="log_in.html">Signup/Login</a>
         </li>
         <li class="nav-item dropdown" id="accountDropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
           <ul class="dropdown-menu dropdown-menu-xl-right" style="width: 200px;" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#ACCOUNT_SETTINGS">Account Settings</a></li>
+            <li><a class="dropdown-item" href="profile.html">Account Settings</a></li>
             <li><a class="dropdown-item" href="#SUPPORT">Support</a></li>
             <li class="dropdown-divider"></li>
             <li><a class="dropdown-item" id="logoutButton">Log out</a></li>
@@ -61,10 +62,130 @@
   </nav>
   <!-- End Of Navigation bar -->
   
-  <!-- Main Body -->
-  <div class="main-body">
-    <div class="container container-first">
-        <div class="col">
+  <!-- Main Body --> 
+  <div class="row account-topnav d-md-none">
+    <img class="rounded-circle img-thumbnail" src="../img/account/portrait_placeholder.png" alt="User's profile image">
+
+    <img class="link-profile" src="../img/account/baseline_account_circle_black_48dp.png" alt="Profile image icon">
+
+    <img class="link-billing" src="../img/account/baseline_payments_black_48dp.png" alt="Payments icon">
+
+    <img class="link-settings" src="../img/account/baseline_settings_black_48dp.png" alt="Settings icon">
+  </div>
+
+  <div class="main-body mt-2">
+    <div class="container account-main-body">
+      <div class="row main-row flex-nowrap">
+        <div class="col-3 account-sidenav text-center d-none d-md-block">
+          <img class="rounded-circle img-thumbnail" src="../img/account/portrait_placeholder.png" alt="User's profile image">
+          <label id="fullNameDisplay" class="m-2" style="font-size: 2vw;">FULL NAME</label> </br>
+          <label id="usernameDisplay" class="m-2" style="font-size: 1.7vw;">PLACEHOLDER</label>
+          <div class="container account-links">
+            <div class="row">
+              <img class="link-profile" src="../img/account/baseline_account_circle_black_48dp.png" alt="Profile image icon">
+              <a class="link-profile nav-link d-none d-md-block">Profile</a>
+            </div>
+
+            <div class="row">
+              <img class="link-billing" src="../img/account/baseline_payments_black_48dp.png" alt="Payments icon">
+              <a class="link-billing nav-link d-none d-md-block">Billing</a>
+            </div>
+
+            <div class="row">
+              <img class="link-settings" src="../img/account/baseline_settings_black_48dp.png" alt="Settings icon">
+              <a class="link-settings nav-link d-none d-md-block">Settings</a>
+            </div>
+          </div>            
+        </div>
+
+        <div class="col account-edit edit-profile" aria-disabled="true">
+          <h2>PROFILE</h2>
+          <form>
+            <div class="custom-file mb-3">
+              <input type="file" class="custom-file-input" id="inputAvatar">
+              <label class="custom-file-label" for="inputAvatar">Choose a picture for your avatar</label>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <label for="inputName">NAME</label>
+                <a class="edit-input" data-tippy-content="Edit">
+                  <img for="inputName" src="../img/account/baseline_edit_black_48dp.png" alt="">
+                </a>
+              </div>
+              <input type="text" readonly class="form-control-plaintext" id="inputName" placeholder="n/a"aria-describedby="name">
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <label for="inputEmail">EMAIL ADDRESS</label>
+                <a class="edit-input" data-tippy-content="Edit">
+                  <img for="inputEmail" src="../img/account/baseline_edit_black_48dp.png" alt="">
+                </a>
+              </div>
+              <input type="email" readonly class="form-control-plaintext" id="inputEmail" placeholder="n/a" aria-describedby="email">
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <label for="inputPassword">CHANGE PASSWORD</label>
+                <a class="edit-input" data-tippy-content="Edit">
+                  <img for="inputPassword" src="../img/account/baseline_edit_black_48dp.png" alt="">
+                </a>
+              </div>
+              <input type="password" readonly class="form-control-plaintext" id="inputPassword" placeholder="n/a" aria-describedby="password">
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <label for="inputAddress">ADDRESS</label>
+                <a class="edit-input" data-tippy-content="Edit">
+                  <img for="inputAddress" src="../img/account/baseline_edit_black_48dp.png" alt="">
+                </a>
+              </div>
+              <input type="text" readonly class="form-control-plaintext" id="inputAddress" placeholder="n/a" aria-describedby="address">
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <label for="inputPhoneNumber">PHONE NUMBER</label>
+                <a class="edit-input" data-tippy-content="Edit">
+                  <img for="inputPhoneNumber" src="../img/account/baseline_edit_black_48dp.png" alt="">
+                </a>
+              </div> 
+              <input type="number" readonly class="form-control-plaintext" id="inputPhoneNumber" placeholder="n/a" aria-describedby="phoneNumber">
+            </div>
+            
+            <button type="button" class="btn-save-changes btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+
+        <div class="col account-edit edit-billing">
+          <h2>BILLING</h2>
+          <div class="row mt-2 border-top bg-primary text-white flex-nowrap">
+            <div class="col col-title">
+              ITEMS
+            </div>
+            <div class="col col-title">
+              DATE
+            </div>
+            <div class="col col-title">
+              TOTAL PAYMENT
+            </div>
+          </div>
+          <div class="row flex-nowrap">
+            <div class="col">
+              Kalachuchi
+            </div>
+            <div class="col">
+              01/01/2020
+            </div>
+            <div class="col">
+              ₱100
+            </div>
+          </div>
+        </div>
+
+        <div class="col account-edit edit-settings">
+          <h2>SETTINGS</h2>
         </div>
       </div>
     </div>

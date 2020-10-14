@@ -51,7 +51,7 @@
         <li class="nav-item dropdown" id="accountDropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
           <ul class="dropdown-menu dropdown-menu-xl-right" style="width: 200px;" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#ACCOUNT_SETTINGS">Account Settings</a></li>
+            <li><a class="dropdown-item" href="profile.html">Account Settings</a></li>
             <li><a class="dropdown-item" href="#SUPPORT">Support</a></li>
             <li class="dropdown-divider"></li>
             <li><a class="dropdown-item" id="logoutButton">Log out</a></li>
@@ -73,7 +73,7 @@
               <div class="card-body">
                 <h5 class="item-name card-title">Agave</h5>
                 <p class="item-price card-text">Price: ₱150</p>
-                <button class="btn-add">Add to Cart</button>
+                <button class="btn-add">ADD TO CART</button>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@
               <div class="card-body">
                 <h5 class="item-name card-title">Boston Fern</h5>
                 <p class="item-price card-text">Price: ₱100</p>
-                <button class="btn-add">Add to Cart</button>
+                <button class="btn-add">ADD TO CART</button>
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@
               <div class="card-body">
                 <h5 class="item-name card-title">Kalachuchi</h5>
                 <p class="item-price card-text">Price: ₱300</p>
-                <button class="btn-add">Add to Cart</button>
+                <button class="btn-add">ADD TO CART</button>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@
               <div class="card-body">
                 <h5 class="item-name card-title">Sanseviera</h5>
                 <p class="item-price card-text">Price: ₱100</p>
-                <button class="btn-add">Add to Cart</button>
+                <button class="btn-add">ADD TO CART</button>
               </div>
             </div>
           </div>
@@ -124,12 +124,90 @@
             <br/>
 
             <h5 class="cart-total-price card-title" style="text-align: center;">Total: </h5>
-            <button class="btn-buy btn-success pl-2 pr-2">BUY</button>
+            <button class="btn btn-primary pl-2 pr-2" data-toggle="modal" data-target="#ModalBillingInfo">BUY</button>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="ModalBillingInfo" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Payment</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="row">
+              <div class="col">
+                <h6>Billing Info</h6>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputFullName">FULL NAME</label>
+                    <input type="text" class="form-control" id="inputFullName">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputBillingAddress">BILLING ADDRESS</label>
+                    <input type="text" class="form-control" id="inputBillingAddress">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">CITY</label>
+                    <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputZip">ZIP CODE</label>
+                    <input type="number" class="form-control" id="inputZip">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col">
+                    <label for="inputCountry">COUNTRY</label>
+                    <input type="text" class="form-control" id="inputCountry">
+                  </div>
+                </div>
+                <button type="button" class="btn btn-light btn-return" data-dismiss="modal">RETURN TO STORE</button>
+              </div>
+  
+              <div class="col">
+                <h6>Credit Card Info</h6>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCardHolderName">CARDHOLDER'S NAME</label>
+                    <input type="text" class="form-control" id="inputCardHolderName">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputCardNumber">CARD NUMBER</label>
+                    <input type="number" class="form-control" id="inputCardNumber">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputExpDate">EXPIRATION DATE</label>
+                    <input type="number" class="form-control" id="inputExpDate">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputExpYear">EXPIRATION YEAR</label>
+                    <input type="number" class="form-control" id="inputExpYear">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col">
+                    <label for="inputCvcNumber">CVC NUMBER</label>
+                    <input type="number" class="form-control" id="inputCvcNumber">
+                  </div>
+                </div>
+                <button type="submit" class="btn-buy btn btn-primary">ORDER NOW</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- End of Main Body -->
 

@@ -6446,11 +6446,11 @@ button.bg-dark:focus {
   border-top: 1px solid #dee2e6 !important;
 }
 
-.border-right {
+.border-right, body .main-body .account-main-body .main-row .account-sidenav {
   border-right: 1px solid #dee2e6 !important;
 }
 
-.border-bottom {
+.border-bottom, body .main-body .account-main-body .main-row .account-edit.edit-billing .row {
   border-bottom: 1px solid #dee2e6 !important;
 }
 
@@ -6869,7 +6869,7 @@ button.bg-dark:focus {
   align-items: flex-end !important;
 }
 
-.align-items-center {
+.align-items-center, body .main-body .account-main-body .main-row .account-edit.edit-profile .form-group .row {
   align-items: center !important;
 }
 
@@ -7626,7 +7626,7 @@ button.bg-dark:focus {
   margin: 0.5rem !important;
 }
 
-.mt-2,
+.mt-2, body .main-body .account-main-body .main-row .account-edit.edit-billing .row .col-title,
 .my-2 {
   margin-top: 0.5rem !important;
 }
@@ -7636,7 +7636,7 @@ button.bg-dark:focus {
   margin-right: 0.5rem !important;
 }
 
-.mb-2,
+.mb-2, body .main-body .account-main-body .main-row .account-edit.edit-billing .row .col-title,
 .my-2 {
   margin-bottom: 0.5rem !important;
 }
@@ -7646,7 +7646,7 @@ button.bg-dark:focus {
   margin-left: 0.5rem !important;
 }
 
-.m-3 {
+.m-3, body .main-body .account-main-body .main-row .account-edit.edit-billing .row .col {
   margin: 1rem !important;
 }
 
@@ -7665,7 +7665,8 @@ button.bg-dark:focus {
   margin-bottom: 1rem !important;
 }
 
-.ml-3,
+.ml-3, body .account-topnav img.link-billing,
+body .account-topnav img.link-settings,
 .mx-3 {
   margin-left: 1rem !important;
 }
@@ -7689,7 +7690,7 @@ button.bg-dark:focus {
   margin-bottom: 1.5rem !important;
 }
 
-.ml-4,
+.ml-4, body .account-topnav img.link-profile,
 .mx-4 {
   margin-left: 1.5rem !important;
 }
@@ -7713,7 +7714,7 @@ button.bg-dark:focus {
   margin-bottom: 3rem !important;
 }
 
-.ml-5,
+.ml-5, body .account-topnav .img-thumbnail,
 .mx-5 {
   margin-left: 3rem !important;
 }
@@ -8001,7 +8002,7 @@ button.bg-dark:focus {
   margin-bottom: auto !important;
 }
 
-.ml-auto,
+.ml-auto, body .main-body .account-main-body .main-row .account-edit.edit-profile .form-group .row,
 .mx-auto {
   margin-left: auto !important;
 }
@@ -9428,7 +9429,7 @@ button.bg-dark:focus {
   text-align: right !important;
 }
 
-.text-center, footer {
+.text-center, body .main-body .account-main-body .main-row .account-edit.edit-billing .row .col-title, body .main-body .account-main-body .main-row .account-edit.edit-billing .row .col, footer {
   text-align: center !important;
 }
 
@@ -9766,6 +9767,24 @@ body {
   font-family: "Archivo", sans-serif;
 }
 
+body .account-topnav {
+  height: fit-content;
+  width: 100vw;
+  margin-top: 0px;
+  align-items: center;
+}
+
+body .account-topnav .img-thumbnail {
+  width: 100px;
+}
+
+body .account-topnav img.link-profile,
+body .account-topnav img.link-billing,
+body .account-topnav img.link-settings {
+  height: 45px;
+  width: 45px;
+}
+
 body .main-body {
   margin-top: 80px;
   margin-bottom: 100px;
@@ -9826,27 +9845,37 @@ body .main-body .container.store-container .store-items .btn-add {
   background-color: var(--primary);
   border-radius: 5px;
   outline: none;
+  height: max-content;
+  width: max-content;
   margin-left: auto;
   padding: 6px;
-  font-size: 0.85rem;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 0.7rem;
 }
 
 body .main-body .store-cart {
   height: fit-content;
   width: 340px;
-  background-color: var(--primary);
-  color: white;
-  box-shadow: 0 18.8px 23.7px rgba(0, 0, 0, 0.039), 0 16.3px 33.3px rgba(0, 0, 0, 0.042), 0 9.5px 44.1px rgba(0, 0, 0, 0.04), 0 5px 63.8px rgba(0, 0, 0, 0.041), 0 11px 104.5px rgba(0, 0, 0, 0.054), 0 100px 224px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  color: var(--primary);
+  box-shadow: 0 0.3px 0.5px rgba(0, 0, 0, 0.02), 0 0.7px 1.1px rgba(0, 0, 0, 0.028), 0 1.3px 2.1px rgba(0, 0, 0, 0.035), 0 2.2px 3.8px rgba(0, 0, 0, 0.042), 0 4.2px 7.1px rgba(0, 0, 0, 0.05), 0 10px 17px rgba(0, 0, 0, 0.07);
 }
 
 body .main-body .store-cart .btn-remove,
-body .main-body .store-cart .btn-buy {
+body .main-body .store-cart .btn-primary {
   border: none;
   border-radius: 4px;
   outline: none;
 }
 
-body .main-body .store-cart .btn-buy {
+body .main-body .store-cart .btn-primary {
+  font-size: .9rem;
+  padding: 6px;
+  padding-left: 18px;
+  padding-right: 18px;
+  color: white;
+  background-color: var(--primary);
   margin-left: 42.5%;
 }
 
@@ -9861,7 +9890,96 @@ body .main-body .store-cart .cart-item-quantity {
 
 body .main-body .store-cart .cart-item-row {
   align-items: center;
+}
+
+body .main-body .modal h6 {
+  margin-top: 6px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+body .main-body .modal label {
+  font-size: .6rem;
+  color: #727171;
+}
+
+body .main-body .modal .btn-return {
+  font-size: .75rem;
+  color: gray;
+  border-color: gray;
+}
+
+body .main-body .modal .btn-buy {
+  height: max-content;
+  width: max-content;
+  font-size: .75rem;
+  margin-left: 19vw;
+}
+
+body .main-body .account-main-body {
+  height: 100vh;
+  width: 100vw;
+}
+
+body .main-body .account-main-body .main-row {
+  height: 100vh;
+  /* .account-edit.edit-settings { 
+
+                } */
+}
+
+body .main-body .account-main-body .main-row .account-sidenav img.rounded-circle {
+  border-radius: 10px;
+}
+
+body .main-body .account-main-body .main-row .account-sidenav .account-links {
+  margin-top: 20px;
+  width: fit-content;
+}
+
+body .main-body .account-main-body .main-row .account-sidenav .account-links .row {
+  cursor: pointer;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+body .main-body .account-main-body .main-row .account-sidenav .account-links .row a {
   color: black;
+}
+
+body .main-body .account-main-body .main-row .account-sidenav .account-links .row a:hover {
+  color: var(--primary);
+}
+
+body .main-body .account-main-body .main-row .account-sidenav .account-links .row img {
+  height: 30px;
+  width: 30px;
+}
+
+body .main-body .account-main-body .main-row .account-edit.edit-profile .form-group .row label {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+body .main-body .account-main-body .main-row .account-edit.edit-profile .form-group .row a {
+  margin-left: 8px;
+}
+
+body .main-body .account-main-body .main-row .account-edit.edit-profile .form-group .row a img {
+  width: 18px;
+}
+
+body .main-body .account-main-body .main-row .account-edit.edit-profile .form-group input {
+  outline: none;
+  width: 40vw;
+}
+
+body .main-body .account-main-body .main-row .account-edit.edit-profile .form-group input::placeholder {
+  justify-content: center;
+  font-size: 0.8rem;
+  font-style: italic;
 }
 
 footer h5, footer a {

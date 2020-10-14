@@ -10,8 +10,7 @@ var currently_loggedin = {
   password: ""
 }
 
-var stored_accounts
-var stored_loggedin
+var stored_accounts = []
 
 var account_found = false
 
@@ -20,40 +19,42 @@ var regexPassword = /[ ]/
 
 function GetInputValue() {
   this.stored_accounts = JSON.parse(localStorage.getItem('accounts')) || [] /* Retrieve */
-  this.stored_loggedin = JSON.parse(localStorage.getItem('loggedin')) || [] /* Retrieve */
 
   if (sPage == "sign_up.html"){
-    username = document.getElementById("username").value
-    password = document.getElementById("password").value
+    username = $("#username").val()
+    password = $("#password").val()
 
     CreateNewAccount(username, password)
   }
 
   if (sPage == "log_in.html"){
-    username = document.getElementById("username").value
-    password = document.getElementById("password").value
+    username = $("#username").val()
+    password = $("#password").val()
 
     SearchAccounts(username, password)  
   }
 }
 
 function CreateNewAccount(name, pass){
-  var notValidUsername = regexUsername.test(name);
-  var notValidPassword = regexPassword.test(pass);
+  var notValidUsername = regexUsername.test(name)
+  var notValidPassword = regexPassword.test(pass)
 
   if (name == "" || pass == "") {
     alert(`Please complete form.`)
+    $("#alertDiv").text(`Please complete form.`)
     return
   } 
 
   if (notValidUsername || notValidPassword) {
     alert(`Username or password not valid.`)
+    $("#alertDiv").text(`Username or password not valid.`)
     return
   } 
   
   if (!notValidUsername && !notValidPassword && name != "" && pass != "") {
     var accounts = {un: name, pw: pass}
     stored_accounts.push(accounts)
+
     localStorage.setItem('accounts', JSON.stringify(stored_accounts)) || []  /* Save */
     alert(`You are now registered.`)
   }

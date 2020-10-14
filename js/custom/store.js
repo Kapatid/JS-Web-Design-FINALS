@@ -84,8 +84,10 @@ function updateCartTotal() {
         total += allCartItemPrices[i];
     }
 
+    let stringTotal = thousandsSeparators(total)
+
     // Update total text by using class
-    $('.cart-total-price.card-title').html(`Total: ${total}`)
+    $('.cart-total-price.card-title').html(`Total: ₱${stringTotal}`)
     
 }
 
@@ -107,5 +109,13 @@ function buyItems() {
 
     alert(`Thank you for buying from our store! \u{1F604}`) 
     updateCartTotal()
+}
+
+// Source: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-39.php
+function thousandsSeparators(num)
+{
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
 }
 

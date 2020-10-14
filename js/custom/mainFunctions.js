@@ -24,10 +24,9 @@ function pageFullyLoaded(e) {
     $('#logoutButton').on('click', LogOut)
 
     function LogOut(){
-        var reset_values = {};
+        var reset_values = [];
         localStorage.setItem('loggedin', JSON.stringify(reset_values)) || [];  /* Save */
-        location = location;
-        location.reload()
+        window.location.replace("../index.html")
       }
 
     $(window).on('scroll', () => {
