@@ -145,23 +145,14 @@ function saveToBilling() {
     let dateAndTime = new Date().toLocaleString()
     let newDateAndTime = dateAndTime.replace(', ', '<br>')
 
+    /* Save all of the values of the items in cart to local storage */
     let billingInfo = {buyer: stored_loggedin.username,
                        item_name: allCartItemNames,
                        item_quantity: allCartItemQuantity,
                        item_price: allCartItemPrices,
                        cart_total: totalPrice,
                        date_time: newDateAndTime}
-    
-    /* for (let i in allCartItemNames) {
-        billingInfor.item_name.push(allCartItemNames[i])
-    }
-
-    for (let i in allCartItemPrices) {
-        billingInfor.item_price.push(allCartItemPrices[i])
-    } */
-
     storedBilling.push(billingInfo)
-
     localStorage.setItem('stored_billing', JSON.stringify(storedBilling))  /* Save */ 
 }
 

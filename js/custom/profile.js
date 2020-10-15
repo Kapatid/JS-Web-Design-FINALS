@@ -13,6 +13,7 @@ function theDomHasLoaded(e) {
     stored_user_info = JSON.parse(localStorage.getItem('user_info')) || [] /* Retrieve */
     storedBilling = JSON.parse(localStorage.getItem('stored_billing')) || [] /* Retrieve */
 
+    /* Get user's username and display to page */
     if(stored_loggedin.username != null && stored_loggedin.acc_found == true){
         username = stored_loggedin.username
         $('#fullNameDisplay').text(username)
@@ -20,6 +21,7 @@ function theDomHasLoaded(e) {
         $('#inputName').val(username)
     }
 
+    /* Get saved user information and insert to page */
     for (let i in stored_user_info) {
         if (stored_loggedin.username == stored_user_info[i].username) {
             $(elementIDs[0]).val(stored_user_info[i].name)
@@ -38,6 +40,7 @@ function theDomHasLoaded(e) {
 
 function pageFullyLoaded() {
 
+    /* On page load load all of the billing information of the user */
     for (var i in storedBilling) {
         if (storedBilling[i].buyer == username) {
             var itemNames = []
@@ -45,6 +48,7 @@ function pageFullyLoaded() {
             var dateTime = storedBilling[i].date_time
             var cartTotal = storedBilling[i].cart_total
 
+            /* Loop and push item name and prices from local storage into new local variable */
             for (var k in storedBilling[i].item_name) {
                 let tempItemNames = storedBilling[i].item_name[k] + "<br>"
                 let tempPrice = storedBilling[i].item_price[k] / storedBilling[i].item_quantity[k]
@@ -55,9 +59,11 @@ function pageFullyLoaded() {
                 itemPrices.push(tempItemPrices)
             }
 
+            /* Remove commas */
             let itemNamesToString = itemNames.join('')
             let itemPricesToString = itemPrices.join('')
 
+            /* Data to insert in our html page */
             let itemRowContent = `<div class="row billing-item-row flex-nowrap">
                                     <div class="col">
                                         ${dateTime}
@@ -76,10 +82,12 @@ function pageFullyLoaded() {
                                      </div>
                                   </div>`
 
+            /* Put itemRowContent in the specified html element by class */
             $('.edit-billing').append(itemRowContent)
         }
     }
 
+    /* Change password event */
     $("#changePasswordButton").on("click", () => {
         event.preventDefault()
         stored_accounts = JSON.parse(localStorage.getItem('accounts')) || [] /* Retrieve */
@@ -89,6 +97,7 @@ function pageFullyLoaded() {
         let changeUserPass = true
         let usernameAndPassword = {un: username, pw: inputNewPassword}
 
+        /* Search for matching username and change the password in local storage */
         for (let i in stored_accounts) {
             if (stored_accounts[i].un == username && stored_accounts[i].pw == inputOldPassword) {
                 stored_accounts.splice([i], 1, usernameAndPassword)
@@ -100,8 +109,12 @@ function pageFullyLoaded() {
         }
         
         localStorage.setItem('accounts', JSON.stringify(stored_accounts))  /* Save */ 
+
+        /* Reset input html elements to empty */
         $('#inputNewPassword').val("")
         $('#inputOldPassword').val("")
+
+        /* Toggle alert html element */
         if (changeUserPass == true) {
             $('#alertPasswordChange').text("Password successfully changed!")
             $('#alertPasswordChange').show()
@@ -109,10 +122,10 @@ function pageFullyLoaded() {
             $('#alertPasswordChange').text("Please try again")
             $('#alertPasswordChange').show()
         }
-        
         $('#alertPasswordChange').delay(900).fadeOut(800)
     })
 
+    /* Reset local storage event */
     $("#resetButton").on("click", () => {
         event.preventDefault()
         localStorage.removeItem('stored_billing')
@@ -122,20 +135,19 @@ function pageFullyLoaded() {
         window.location.href ='../index.html'
     })
     
+    /* Change profile view events */
     $(".link-profile").on("click", () => {
         event.preventDefault()
         $(".edit-profile").show()
         $(".edit-billing").hide()
         $(".edit-settings").hide()
     })
-
     $(".link-billing").on("click", () => {
         event.preventDefault()
         $(".edit-profile").hide()
         $(".edit-billing").show()
         $(".edit-settings").hide()
     })
-
     $(".link-settings").on("click", () => {
         event.preventDefault()
         $(".edit-profile").hide()
@@ -143,17 +155,20 @@ function pageFullyLoaded() {
         $(".edit-settings").show()
     })
 
+    /* Change user's image but not used because of website security reasons */
     $(".custom-file-input").on("change", function() {
         let source = this.value
         $(this.nextElementSibling).text(source)
     })
 
+    /* Edit (the one with pencil image) event for every input html element */
     $(".edit-input").on("click", function() {
         let $inputField = $("#" + this.parentElement.nextElementSibling.id)
         $inputField.removeClass("form-control-plaintext").addClass("form-control")
         $inputField.attr("readonly", false)
     })
 
+    /* Save value of every input html element to local storage */
     $(".btn-save-changes").on("click", function() {
         let userInfo = {username: username,
                         name: $(elementIDs[0]).val(), 
