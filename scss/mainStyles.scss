@@ -326,9 +326,9 @@ body {
                 }
 
                 .account-edit.edit-billing {
-                    .row {
+                    .billing-item-row {
                         @extend .border-bottom;
-
+                        
                         .col-title {
                             @extend .text-center,
                                     .mt-2,
@@ -343,9 +343,27 @@ body {
                     
                 }
 
-                /* .account-edit.edit-settings { 
-
-                } */
+                .account-edit.edit-settings { 
+                    @extend .mr-3;
+                    .setting-item {
+                        @extend .mt-3,
+                                .ml-1,
+                                .p-3,
+                                .rounded-lg,
+                                .align-items-center,
+                                .justify-content-between,
+                                .border;
+                        
+                        .setting-note {
+                            @extend .mt-3,
+                                    .ml-2,
+                                    .mr-2,
+                                    .text-muted;
+                            
+                            font-style:italic ;
+                        }
+                    }
+                }
             }
         }
         // END OF ACCOUNT SETTINGS STYLES

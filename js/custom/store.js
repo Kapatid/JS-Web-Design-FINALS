@@ -1,7 +1,10 @@
-
 window.addEventListener("load", pageFullyLoaded, false);
 
+var storedBilling = []
+var stored_loggedin = []
+
 function pageFullyLoaded(e) {
+    stored_loggedin = JSON.parse(localStorage.getItem('loggedin')) || [] /* Retrieve */
     $('.btn-add').on('click', addItem)
     $('.btn-buy').on('click', buyItems)
 }
@@ -102,13 +105,16 @@ function buyItems() {
         return
     }
 
+    updateCartTotal()
+    saveToBilling()
+
     // Delete all of cart items by knowing their card classes
     for(let i in allCartItemNames) { 
         allCartItemNames[i].remove()   
     }
 
     alert(`Thank you for buying from our store! \u{1F604}`) 
-    updateCartTotal()
+    
 }
 
 // Source: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-39.php
@@ -117,5 +123,45 @@ function thousandsSeparators(num)
     var num_parts = num.toString().split(".");
     num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return num_parts.join(".");
+}
+
+function saveToBilling() {
+    storedBilling = JSON.parse(localStorage.getItem('stored_billing')) || [] /* Retrieve */
+
+    let allCartItemNames = $(".cart-item-name").map(function() {
+        return this.innerHTML
+    }).get()
+
+    let allCartItemQuantity = $(".cart-item-quantity").map(function() {
+        return this.value
+    }).get()
+
+    let allCartItemPrices = $(".cart-item-price").map(function() {
+        return parseFloat(this.innerHTML.replace('Price: ₱', ''))
+    }).get()
+
+    let totalPrice = $(".cart-total-price").text().replace('Total: ₱', '')
+
+    let dateAndTime = new Date().toLocaleString()
+    let newDateAndTime = dateAndTime.replace(', ', '<br>')
+
+    let billingInfo = {buyer: stored_loggedin.username,
+                       item_name: allCartItemNames,
+                       item_quantity: allCartItemQuantity,
+                       item_price: allCartItemPrices,
+                       cart_total: totalPrice,
+                       date_time: newDateAndTime}
+    
+    /* for (let i in allCartItemNames) {
+        billingInfor.item_name.push(allCartItemNames[i])
+    }
+
+    for (let i in allCartItemPrices) {
+        billingInfor.item_price.push(allCartItemPrices[i])
+    } */
+
+    storedBilling.push(billingInfo)
+
+    localStorage.setItem('stored_billing', JSON.stringify(storedBilling))  /* Save */ 
 }
 

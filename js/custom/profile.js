@@ -6,10 +6,12 @@ var elementIDs = ["#inputName", "#inputEmail", "#inputPassword", "#inputAddress"
 var stored_user_info = []
 var stored_loggedin = []
 var stored_accounts = []
+var storedBilling = []
 
 function theDomHasLoaded(e) {
     stored_loggedin = JSON.parse(localStorage.getItem('loggedin')) || [] /* Retrieve */
     stored_user_info = JSON.parse(localStorage.getItem('user_info')) || [] /* Retrieve */
+    storedBilling = JSON.parse(localStorage.getItem('stored_billing')) || [] /* Retrieve */
 
     if(stored_loggedin.username != null && stored_loggedin.acc_found == true){
         username = stored_loggedin.username
@@ -31,9 +33,95 @@ function theDomHasLoaded(e) {
     /* $(".edit-profile").hide() */
     $(".edit-billing").hide()
     $(".edit-settings").hide()
+    $("#alertPasswordChange").hide()
 }
 
 function pageFullyLoaded() {
+
+    for (var i in storedBilling) {
+        if (storedBilling[i].buyer == username) {
+            var itemNames = []
+            var itemPrices = []
+            var dateTime = storedBilling[i].date_time
+            var cartTotal = storedBilling[i].cart_total
+
+            for (var k in storedBilling[i].item_name) {
+                let tempItemNames = storedBilling[i].item_name[k] + "<br>"
+                let tempPrice = storedBilling[i].item_price[k] / storedBilling[i].item_quantity[k]
+                let tempItemPrices =" ₱" + tempPrice +
+                                    " (x" + storedBilling[i].item_quantity[k] + ")" + "<br>" 
+                                   
+                itemNames.push(tempItemNames)
+                itemPrices.push(tempItemPrices)
+            }
+
+            let itemNamesToString = itemNames.join('')
+            let itemPricesToString = itemPrices.join('')
+
+            let itemRowContent = `<div class="row billing-item-row flex-nowrap">
+                                    <div class="col">
+                                        ${dateTime}
+                                    </div>
+                                     <div class="col text-nowrap">
+                                        ${itemNamesToString}
+                                     </div>
+                                     <div class="col">
+                                        <div class="row justify-content-center mb-2">
+                                            ${itemPricesToString}
+                                        </div>
+
+                                        <div class="row border-top justify-content-center">
+                                            ₱${cartTotal}
+                                        </div>
+                                     </div>
+                                  </div>`
+
+            $('.edit-billing').append(itemRowContent)
+        }
+    }
+
+    $("#changePasswordButton").on("click", () => {
+        event.preventDefault()
+        stored_accounts = JSON.parse(localStorage.getItem('accounts')) || [] /* Retrieve */
+
+        let inputNewPassword = $('#inputNewPassword').val()
+        let inputOldPassword = $('#inputOldPassword').val()
+        let changeUserPass = true
+        let usernameAndPassword = {un: username, pw: inputNewPassword}
+
+        for (let i in stored_accounts) {
+            if (stored_accounts[i].un == username && stored_accounts[i].pw == inputOldPassword) {
+                stored_accounts.splice([i], 1, usernameAndPassword)
+                changeUserPass = true
+                break
+            } else {
+                changeUserPass = false
+            }
+        }
+        
+        localStorage.setItem('accounts', JSON.stringify(stored_accounts))  /* Save */ 
+        $('#inputNewPassword').val("")
+        $('#inputOldPassword').val("")
+        if (changeUserPass == true) {
+            $('#alertPasswordChange').text("Password successfully changed!")
+            $('#alertPasswordChange').show()
+        } else {
+            $('#alertPasswordChange').text("Please try again")
+            $('#alertPasswordChange').show()
+        }
+        
+        $('#alertPasswordChange').delay(900).fadeOut(800)
+    })
+
+    $("#resetButton").on("click", () => {
+        event.preventDefault()
+        localStorage.removeItem('stored_billing')
+        localStorage.removeItem('loggedin')
+        localStorage.removeItem('accounts')
+        localStorage.removeItem('user_info')
+        window.location.href ='../index.html'
+    })
+    
     $(".link-profile").on("click", () => {
         event.preventDefault()
         $(".edit-profile").show()
@@ -70,7 +158,6 @@ function pageFullyLoaded() {
         let userInfo = {username: username,
                         name: $(elementIDs[0]).val(), 
                         email: $(elementIDs[1]).val(),
-                        change_password: $(elementIDs[2]).val(),
                         address: $(elementIDs[3]).val(),
                         phone_number: $(elementIDs[4]).val()}
         let pushUserInfo = true
@@ -96,7 +183,6 @@ function pageFullyLoaded() {
             $currentElem.removeClass("form-control").addClass("form-control-plaintext")
             $currentElem.attr("readonly", true)
         }
-        console.log("Infos saved")
     })
 
     tippy('.edit-input', {

@@ -40,29 +40,38 @@ function CreateNewAccount(name, pass){
   var notValidPassword = regexPassword.test(pass)
 
   if (name == "" || pass == "") {
-    alert(`Please complete form.`)
     $("#alertDiv").text(`Please complete form.`)
     return
   } 
 
   if (notValidUsername || notValidPassword) {
-    alert(`Username or password not valid.`)
     $("#alertDiv").text(`Username or password not valid.`)
     return
   } 
   
   if (!notValidUsername && !notValidPassword && name != "" && pass != "") {
-    var accounts = {un: name, pw: pass}
-    stored_accounts.push(accounts)
+    let accounts = {un: name, pw: pass}
+    let pushAccount = true
 
-    localStorage.setItem('accounts', JSON.stringify(stored_accounts)) || []  /* Save */
-    alert(`You are now registered.`)
+    for (let i in stored_accounts) {
+      if (stored_accounts[i].un == accounts.un){
+        $("#alertDiv").text(`Account already exists`)
+        pushAccount = false
+        break
+      }
+    }
+
+    if (pushAccount == true) {
+      stored_accounts.push(accounts)
+      localStorage.setItem('accounts', JSON.stringify(stored_accounts)) || []  /* Save */
+      $("#alertDiv").text(`You are now registered`)
+    }
   }
 }
 
 function SearchAccounts(name, pass){
   if (name == "" || pass == "") {
-    alert(`Please complete form.`)
+    $("#alertDiv").text(`Please complete form.`)
     return
   } 
 
@@ -77,14 +86,14 @@ function SearchAccounts(name, pass){
   }
   catch{  /* If there is error execute following code */
     currently_loggedin.acc_found = false;
-    alert("Account not found.")
+    $("#alertDiv").text(`Account not found.`)
   }
 
   if (this.account_found == true){
     currently_loggedin.username = this.username
     currently_loggedin.password = this.password
     
-    alert("You are now logged in.")
+    $("#alertDiv").text(`You are now logged in.`)
     localStorage.setItem('loggedin', JSON.stringify(currently_loggedin)) || []  /* Save */
     window.location.href ='../index.html'
   }
