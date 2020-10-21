@@ -17,6 +17,12 @@ function theDomHasLoaded(e) {
     }
 
     $("body").removeClass("preload");
+
+    if ($(".btn-shop-now") != null || $(".btn-shop-now2") != null){
+        $(".btn-shop-now, .btn-shop-now2").on("click", () => {
+            window.location.replace("html/store.html")
+        })
+    }
 }
 
 function pageFullyLoaded(e) {

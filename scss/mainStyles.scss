@@ -3,12 +3,12 @@ $theme-colors: (
     "secondary": #4c956c
 );
 
-@import "fonts";
-
 /* Bootstrap SCSS */
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 /* Custom SCSS */
+@import "_fonts.scss";
+
 .preload * {
     transition: none !important;
     -moz-transition: none !important;
@@ -17,51 +17,61 @@ $theme-colors: (
 }
 
 nav {
-    transition: background-color 0.2s ease-out;
-    transition: box-shadow 0.2s ease-out;
+    box-shadow:
+        0 0.6px 1.4px rgba(0, 0, 0, 0.038),
+        0 1.8px 3.8px rgba(0, 0, 0, 0.055),
+        0 4.2px 9px rgba(0, 0, 0, 0.072),
+        0 14px 30px rgba(0, 0, 0, 0.11);
+  
+    background-color: var(--primary);
+
     .navbar-brand {
-        font-size: xx-large;
-        font-weight: bold;
+        @extend .d-flex,
+                .align-items-center;
+        color: white;
+        font-family: 'DeliusUnicase';
+        font-size: 2rem;
         img{
-            width: 80px;
+            width: 40px; 
+            height: 40px; 
         }
     }
     .nav-link {
+        @extend .p-0,
+                .m-2;
+        color: white;
         font-size: 1.15rem;
+        width: fit-content;
+
+        &:hover {
+            border-bottom-style: dashed;
+        }
     }
-    .nav-link.active{
-        font-weight: bold;
+
+    .nav-link.active {
+        border-bottom-style: solid;
     }
-    .nav-link:hover, 
-    .nav-link:focus {
-        color: var(--primary);
-        font-weight: bold;
-    }
+
     .navbar-toggler{
         @extend .navbar-light;
         border: black;
     }
     .dropdown-menu {
         .dropdown-item{
-            color: var(--primary);
-        }
-        .dropdown-item:hover {
-            color: white;
-            background-color: var(--primary);
+            color: black;
+
+            &:hover {
+                color: white;
+                background-color: var(--primary);
+            }
         }
     }
 }
 
-nav.scrolled {
-    box-shadow:
-        0 1.8px 4.3px rgba(0, 0, 0, 0.038),
-        0 6px 14.3px rgba(0, 0, 0, 0.047),
-        0 27px 64px rgba(0, 0, 0, 0.07);
-    background-color: white;
-}
-
 body {
     font-family: "Archivo", sans-serif;
+    margin: 0px;
+    padding: 0px;
 
     .account-topnav {
         height: fit-content;
@@ -91,26 +101,194 @@ body {
         }
     }
 
-    .main-body {
-        margin-top: 80px;
-        margin-bottom: 100px;
-        .container {
-            width:fit-content;
+    // HOME PAGE STYLES
+    .main-home,
+    .main-home2,
+    .main-about-body {
+        @extend .main-body,
+                .m-0,
+                .mb-3;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 72vh;
+        box-shadow: inset 0px -2px 26px -14px rgba(0,0,0,0.75);
+
+        .row-main {
+            padding-left: 180px;
+            padding-top: 100px;
+
+            font-size: 4rem;
+            color: var(--primary);
         }
+
+        .btn-shop-now,
+        .btn-shop-now2 {
+            @extend .rounded-pill, 
+                    .btn-outline-primary,
+                    .btn,
+                    .p-2;
+            margin-left: 190px;
+            width: 150px;
+            font-size: 1rem;
+            transition: all 0.2s;
+            
+            span {
+                display: inline-block;
+                position: relative;
+                transition: 0.2s;
+            }
+
+            span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.2s;
+            }
+
+            &:hover span {
+                padding-right: 20px;
+            }
+            
+            &:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+
+            &:hover {
+                background-color: var(--primary);
+                color: white;
+            }
+        }
+
+        .btn-shop-now2 {
+            @extend .m-0,
+                    .btn-outline-light;
+            
+            &:hover {
+                background-color: white;
+                color: var(--primary);
+            }
+        }
+    }
+
+    .main-home2 {
+        height: 68vh;
+        background-color: rgba(0, 0, 0, 0.295); 
+        background-blend-mode: multiply; 
+    }
+
+    .btn-our-products {
+        @extend .btn,
+                .btn-outline-primary, 
+                .rounded-pill, 
+                .pl-4, 
+                .pr-4;
+
+        font-size: 2rem; 
+        letter-spacing: .1rem; 
+        word-spacing: .2rem;
+    }
+
+    .container-home-products,
+    .container-aboutus {
+        margin-top: 40px; 
+        height: 70vh;
+
+        .card-deck {
+            height: 410px;
+
+            .card-1,
+            .card-2,
+            .card-3 {
+                background-size: cover;
+                background-repeat: no-repeat;
+                box-shadow: 0 0px 19px rgba(0, 0, 0, 0.17);
+
+                .card-body {
+                    @extend .d-flex,
+                            .justify-content-center,
+                            .align-items-center;
+
+                    .btn-home-product {
+                        transition: 0.7s all ease;
+                        @extend .btn,
+                                .btn-light,
+                                .d-flex, 
+                                .align-items-center, 
+                                .justify-content-center;
+                        height: 50px;
+                        width: 200px;
+                        box-shadow:
+                            0 0.3px 0.5px rgba(0, 0, 0, 0.02),
+                            0 0.7px 1.1px rgba(0, 0, 0, 0.028),
+                            0 1.3px 2.1px rgba(0, 0, 0, 0.035),
+                            0 2.2px 3.8px rgba(0, 0, 0, 0.042),
+                            0 4.2px 7.1px rgba(0, 0, 0, 0.05),
+                            0 10px 17px rgba(0, 0, 0, 0.07);
+                        color: var(--primary);
+                        font-size: 1.5rem;
+                        letter-spacing: 2px;
+
+                        &:hover {
+                            background-color: transparent;
+                            width: 100%;
+                            height: 100%;
+                            color: white;
+                            font-weight: bold;
+                            letter-spacing: 3px;
+                            text-shadow: 0 1px 0 #CCCCCC, 
+                                         0 2px 0 #c9c9c9, 
+                                         0 3px 0 #bbb, 
+                                         0 4px 0 #b9b9b9, 
+                                         0 5px 0 #aaa, 
+                                         0 6px 1px rgba(0,0,0,.1), 
+                                         0 0 5px rgba(0,0,0,.1), 
+                                         0 1px 3px rgba(0,0,0,.3), 
+                                         0 3px 5px rgba(0,0,0,.2), 
+                                         0 5px 10px rgba(0,0,0,.25), 
+                                         0 10px 10px rgba(0,0,0,.2), 
+                                         0 20px 20px rgba(0,0,0,.15);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // END OF HOME PAGE STYLES
+
+    // ABOUT PAGE STYLES
+    .main-about-body {
+        height: 60vh;
+        background-color: rgba(0, 0, 0, 0.281);
+        background-blend-mode: multiply;
+
+        h1 {
+            font-size: 5rem;
+            text-shadow: #474747 3px 5px 2px;
+        }
+    }
+    
+    // END OF ABOUT PAGE STYLES
+
+    .main-body {
+        margin-top: 90px;
+        margin-bottom: 100px;
 
         // LOG IN & SIGN UP PAGE STYLES
         .sign-log-container {
             border-radius: 10px;
             background-color: white;
             box-shadow:
-                0 2.7px 1.9px rgba(0, 0, 0, 0.022),
-                0 5.7px 4.6px rgba(0, 0, 0, 0.032),
-                0 9.5px 8.6px rgba(0, 0, 0, 0.04),
-                0 15.2px 15.4px rgba(0, 0, 0, 0.048),
-                0 26.6px 28.8px rgba(0, 0, 0, 0.058),
-                0 53px 69px rgba(0, 0, 0, 0.08);
-            width: 420px;
-            height: 500px;
+                0 0px 1.3px rgba(0, 0, 0, 0.069),
+                0 0px 4.2px rgba(0, 0, 0, 0.101),
+                0 0px 19px rgba(0, 0, 0, 0.17);
+
+            width: 380px;
+            height: 470px;
         
             .row {
                 justify-content: center;
@@ -123,8 +301,8 @@ body {
             .txtbox-container {
                 background-color: rgba(128, 128, 128, 0.123);
                 border-radius: 5px;
-                margin-left: 80px;
-                margin-right: 80px;
+                margin-left: 60px;
+                margin-right: 60px;
             }
             
             .username-txtbox, 
@@ -133,13 +311,11 @@ body {
                 transition: border-bottom-color 0.2s ease-out;
                 border-color: transparent;
                 background-color: transparent;
-            }
-        
-            .username-txtbox:hover, 
-            .password-txtbox:hover, 
-            .username-txtbox:focus, 
-            .password-txtbox:focus {
-                border-bottom-color: green;
+
+                &:hover,
+                &:focus {
+                    border-bottom-color: green;
+                }
             }
         
             .log-in-button {
@@ -169,6 +345,22 @@ body {
                     padding-left: 12px;
                     padding-right: 12px;
                     font-size: 0.7rem;
+                }
+
+                .col {
+                    .card {
+                        @extend .h-auto;
+                        
+                        &:hover {
+                            box-shadow:
+                                0 0px 1.3px rgba(0, 0, 0, 0.069),
+                                0 0px 4.2px rgba(0, 0, 0, 0.101),
+                                0 0px 19px rgba(0, 0, 0, 0.17);
+                            .item-price {
+                                font-weight: bold;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -277,10 +469,9 @@ body {
 
                             a {
                                 color: black;
-                            }
-
-                            a:hover {
-                                color: var(--primary);
+                                &:hover {
+                                    color: var(--primary);
+                                }
                             }
     
                             img {
@@ -308,6 +499,7 @@ body {
 
                                 img {
                                     width: 18px;
+                                    cursor: pointer;
                                 }
                             }
                         }
@@ -394,12 +586,11 @@ footer {
     a{
         text-transform:capitalize;
         padding: 0rem;
-        
-    }
-
-    a:hover{
-        color: white;
-        font-weight: bold;
+        &:hover {
+            text-decoration: none;
+            color: white;
+            border-bottom-style: dashed;
+        }
     }
 
     #footerRowItems {

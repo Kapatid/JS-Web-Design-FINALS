@@ -37,14 +37,14 @@ function addItem(event) {
     let cartRow = document.createElement('div') 
     cartRow.classList.add('cart-row')
     // Get price of current item to add in our cart
-    let itemPrice = buttonClicked.previousElementSibling.innerHTML.replace('Price: ₱', '')
+    let itemPrice = buttonClicked.previousElementSibling.innerHTML.replace('₱', '')
     // Store our <div> content
     let itemRowContent = `<div class="card" style="margin-top:6px">
                             <div class="card-body">
                                 <div class="cart-item-row row">
                                     <div class="col">
                                         <p class="cart-item-name" style="font-weight:bold">${itemName}</p> 
-                                        <p class="cart-item-price">Price: ₱${itemPrice}</p>
+                                        <p class="cart-item-price">₱${itemPrice}</p>
                                         <input type="hidden" value="${itemPrice}"/>
                                         Amount:<input class="cart-item-quantity" type="number" value="1"/> <br/>
                                     </div>
@@ -72,13 +72,13 @@ function quantityChanged(event) {
 
     changedPrice = parseFloat(input.previousElementSibling.value) * input.value
 
-    $(input.previousElementSibling.previousElementSibling).html(`Price: ₱${changedPrice}`)
+    $(input.previousElementSibling.previousElementSibling).html(`₱${changedPrice}`)
     updateCartTotal()
 }
 
 function updateCartTotal() {
     let allCartItemPrices = $(".cart-item-price").map(function() {
-        return parseFloat(this.innerHTML.replace('Price: ₱', ''))
+        return parseFloat(this.innerHTML.replace('₱', ''))
     }).get()
 
     // Increment total variable for each item's price in our cart
@@ -106,7 +106,10 @@ function buyItems() {
     }
 
     updateCartTotal()
-    saveToBilling()
+
+    if (stored_loggedin.username != null){
+        saveToBilling()
+    }
 
     // Delete all of cart items by knowing their card classes
     for(let i in allCartItemNames) { 
@@ -137,7 +140,7 @@ function saveToBilling() {
     }).get()
 
     let allCartItemPrices = $(".cart-item-price").map(function() {
-        return parseFloat(this.innerHTML.replace('Price: ₱', ''))
+        return parseFloat(this.innerHTML.replace('₱', ''))
     }).get()
 
     let totalPrice = $(".cart-total-price").text().replace('Total: ₱', '')

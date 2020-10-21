@@ -30,8 +30,8 @@
 <body class="preload">
   <!-- Navigation bar -->
   <!-- <div id="nav-placeholder"></div> -->
-  <nav class="navbar p-4 pl-5 pr-5 sticky-top navbar-expand-lg">
-    <a class="navbar-brand" href="#BRAND_LOGO"><img src="img/home/vectorstock_23639604.png" alt="BRAND"></a>
+  <nav class="navbar p-3 pl-5 pr-5 sticky-top navbar-expand-lg">
+    <a class="navbar-brand" href="index.html"><img src="img/home/Logo v.2.png" alt="BRAND">&thinsp;MASETERA</a> 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" style="outline: none;">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,7 +39,7 @@
     <div class="collapse navbar-collapse ml-2" id="navbarSupportedContent">
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="index.html">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link active pb-2" href="index.html"><span>Home</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="html/store.html">Store</a>
@@ -62,10 +62,69 @@
   <!-- End Of Navigation bar -->
   
   <!-- Main Body -->
-  <div class="main-body">
-    <div class="container" style="height: 70vh;">
-        <div class="col">
-          Home
+  <div class="main-home2 d-md-none" style="background-image: url('img/home/annie-spratt-KQ6sO8m1ZDE-unsplash.jpg');"> 
+    <div class="container">
+      <div class="row m-0 p-0">
+        <div class="row justify-content-center text-white text-center" style="margin-top: 150px; font-size: 2rem; width: 100vw;">
+          Get up to 20% OFF <br/>
+          New Arrivals
+        </div>
+        <div class="row mt-3 justify-content-center" style="width: 100vw;">
+          <button class="btn-shop-now2"><span>SHOP NOW</span></button>
+        </div>
+      </div>
+    </div>
+    <div id="products2"></div>
+  </div>
+
+  <div class="container d-md-none" style="margin-top: 40px; font-size: 2.5rem;">
+    <div class="row justify-content-center">
+      <a href="#products2" class="btn-our-products">
+        OUR PRODUCTS
+      </a>
+    </div>
+  </div>
+
+  <div class="main-home d-none d-md-block" style="background-image: url('img/home/Plant.jpg');"> 
+    <div class="row-main">
+      Get up to 20% OFF <br/>
+      New Arrivals
+    </div>
+    <button class="btn-shop-now"><span>SHOP NOW</span></button>
+    <div id="products1"></div>
+  </div>
+
+  <div class="container d-none d-md-block" style="margin-top: 30px; font-size: 2.5rem;">
+    <div class="row justify-content-center">
+      <a href="#products1" class="btn-our-products">
+        OUR PRODUCTS
+      </a>
+    </div>
+  </div>
+
+  <div class="container container-home-products">
+    <div class="card-deck">
+      <div class="card card-1" style="background-image: url('img/home/Plant1.jpg')">
+        <div class="card-body">
+          <a class="btn-home-product" href="html/store.html">
+            PLANTS
+          </a>
+        </div>
+      </div>
+      
+      <div class="card card-2" style="background-image: url('img/home/Plants.jpg');">
+        <div class="card-body">
+          <a class="btn-home-product" href="html/store.html">
+            TRENDING
+          </a>
+        </div>
+      </div>
+  
+      <div class="card card-3" style="background-image: url('img/home/Flowers.jpg');">
+        <div class="card-body">
+          <a class="btn-home-product" href="html/store.html">
+            FLOWERS
+          </a>
         </div>
       </div>
     </div>
@@ -80,16 +139,16 @@
         <div class="row justify-content-center">
           <div id="footerRowItems"> 
             <h5 class="card-title">about</h5>  
-            <a class="card-link" href="#ABOUT_US">about us</a><br>
-            <a class="card-link" href="#PRIVACY_POLICY">privacy policy</a><br>
-            <a class="card-link" href="#TERMS_OF_SERVICE">terms of service</a>
+            <a href="html/about.html">about us</a><br>
+            <a href="#PRIVACY_POLICY">privacy policy</a><br>
+            <a href="#TERMS_OF_SERVICE">terms of service</a>
           </div>
 
           <div id="footerRowItems"> 
             <h5 class="card-title">help</h5>
-            <a class="card-link" href="#HELP_CENTER">help center</a><br>
-            <a class="card-link" href="#GET_STARTED">get started</a><br>
-            <a class="card-link" href="#CONTACT_US">contact us</a>
+            <a href="#HELP_CENTER">help center</a><br>
+            <a href="#GET_STARTED">get started</a><br>
+            <a href="#CONTACT_US">contact us</a>
           </div>
 
           <div id="footerRowItems"> 
