@@ -8312,7 +8312,7 @@ button.bg-dark:focus {
   border-right: 1px solid #dee2e6 !important;
 }
 
-.border-bottom, body .main-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row, body .main-home .account-main-body .main-row .account-edit.edit-billing .billing-item-row, body .main-home2 .account-main-body .main-row .account-edit.edit-billing .billing-item-row, body .main-about-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row {
+.border-bottom {
   border-bottom: 1px solid #dee2e6 !important;
 }
 
@@ -9443,7 +9443,7 @@ body .container-aboutus .card-deck .card-3 .card-body .btn-home-product, body .m
   height: 100% !important;
 }
 
-.h-auto, body .main-body .container.store-container .store-items .col .card, body .main-home .container.store-container .store-items .col .card, body .main-home2 .container.store-container .store-items .col .card, body .main-about-body .container.store-container .store-items .col .card, body .main-body .container.store-container .store-items .col footer, body .main-home .container.store-container .store-items .col footer, body .main-home2 .container.store-container .store-items .col footer, body .main-about-body .container.store-container .store-items .col footer {
+.h-auto {
   height: auto !important;
 }
 
@@ -9528,7 +9528,7 @@ body .main-about-body .btn-shop-now2, footer #footerRowItems #socialMediaBtn {
   margin: 0.5rem !important;
 }
 
-.mt-2, body .main-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title, body .main-home .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title, body .main-home2 .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title, body .main-about-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title,
+.mt-2,
 .my-2 {
   margin-top: 0.5rem !important;
 }
@@ -9538,7 +9538,7 @@ body .main-about-body .btn-shop-now2, footer #footerRowItems #socialMediaBtn {
   margin-right: 0.5rem !important;
 }
 
-.mb-2, body .main-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title, body .main-home .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title, body .main-home2 .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title, body .main-about-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title,
+.mb-2,
 .my-2 {
   margin-bottom: 0.5rem !important;
 }
@@ -9548,7 +9548,7 @@ body .main-about-body .btn-shop-now2, footer #footerRowItems #socialMediaBtn {
   margin-left: 0.5rem !important;
 }
 
-.m-3, body .main-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col, body .main-home .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col, body .main-home2 .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col, body .main-about-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col {
+.m-3 {
   margin: 1rem !important;
 }
 
@@ -9647,7 +9647,7 @@ body .account-topnav img.link-settings,
   padding-left: 0 !important;
 }
 
-.p-1, footer #footerRowItems {
+.p-1 {
   padding: 0.25rem !important;
 }
 
@@ -9724,7 +9724,7 @@ body .main-about-body .btn-shop-now2, body .main-body .sign-log-container .log-i
   padding-left: 1rem !important;
 }
 
-.p-4 {
+.p-4, footer #footerRowItems {
   padding: 1.5rem !important;
 }
 
@@ -11338,7 +11338,7 @@ body .main-about-body .btn-shop-now2, body .main-body .sign-log-container .log-i
   text-align: right !important;
 }
 
-.text-center, body .main-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title, body .main-home .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title, body .main-home2 .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title, body .main-about-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col-title, body .main-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col, body .main-home .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col, body .main-home2 .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col, body .main-about-body .account-main-body .main-row .account-edit.edit-billing .billing-item-row .col, footer {
+.text-center, footer {
   text-align: center !important;
 }
 
@@ -11430,7 +11430,11 @@ body .main-about-body .btn-shop-now2, body .main-body .sign-log-container .log-i
   color: #fff !important;
 }
 
-.text-primary {
+.text-primary, body .main-body .sign-log-container form .username-container input, body .main-home .sign-log-container form .username-container input, body .main-home2 .sign-log-container form .username-container input, body .main-about-body .sign-log-container form .username-container input,
+body .main-body .sign-log-container form .password-container input,
+body .main-home .sign-log-container form .password-container input,
+body .main-home2 .sign-log-container form .password-container input,
+body .main-about-body .sign-log-container form .password-container input {
   color: #2c6e49 !important;
 }
 
@@ -11886,43 +11890,119 @@ body .main-body .sign-log-container, body .main-home .sign-log-container, body .
   height: 470px;
 }
 
-body .main-body .sign-log-container .row, body .main-home .sign-log-container .row, body .main-home2 .sign-log-container .row, body .main-about-body .sign-log-container .row {
-  justify-content: center;
+body .main-body .sign-log-container form, body .main-home .sign-log-container form, body .main-home2 .sign-log-container form, body .main-about-body .sign-log-container form {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-top: 50px;
 }
 
-body .main-body .sign-log-container .row h5, body .main-home .sign-log-container .row h5, body .main-home2 .sign-log-container .row h5, body .main-about-body .sign-log-container .row h5 {
-  margin-top: 60px;
-  font-size: 3rem;
+body .main-body .sign-log-container form .username-container, body .main-home .sign-log-container form .username-container, body .main-home2 .sign-log-container form .username-container, body .main-about-body .sign-log-container form .username-container,
+body .main-body .sign-log-container form .password-container,
+body .main-home .sign-log-container form .password-container,
+body .main-home2 .sign-log-container form .password-container,
+body .main-about-body .sign-log-container form .password-container {
+  position: relative;
+  margin-left: 80px;
+  overflow: hidden;
 }
 
-body .main-body .sign-log-container .txtbox-container, body .main-home .sign-log-container .txtbox-container, body .main-home2 .sign-log-container .txtbox-container, body .main-about-body .sign-log-container .txtbox-container {
-  background-color: rgba(128, 128, 128, 0.123);
-  border-radius: 5px;
-  margin-left: 60px;
-  margin-right: 60px;
-}
-
-body .main-body .sign-log-container .username-txtbox, body .main-home .sign-log-container .username-txtbox, body .main-home2 .sign-log-container .username-txtbox, body .main-about-body .sign-log-container .username-txtbox,
-body .main-body .sign-log-container .password-txtbox,
-body .main-home .sign-log-container .password-txtbox,
-body .main-home2 .sign-log-container .password-txtbox,
-body .main-about-body .sign-log-container .password-txtbox {
+body .main-body .sign-log-container form .username-container input, body .main-home .sign-log-container form .username-container input, body .main-home2 .sign-log-container form .username-container input, body .main-about-body .sign-log-container form .username-container input,
+body .main-body .sign-log-container form .password-container input,
+body .main-home .sign-log-container form .password-container input,
+body .main-home2 .sign-log-container form .password-container input,
+body .main-about-body .sign-log-container form .password-container input {
+  width: 100%;
+  height: 100%;
+  border: none;
   outline: none;
-  transition: border-bottom-color 0.2s ease-out;
-  border-color: transparent;
-  background-color: transparent;
 }
 
-body .main-body .sign-log-container .username-txtbox:hover, body .main-home .sign-log-container .username-txtbox:hover, body .main-home2 .sign-log-container .username-txtbox:hover, body .main-about-body .sign-log-container .username-txtbox:hover, body .main-body .sign-log-container .username-txtbox:focus, body .main-home .sign-log-container .username-txtbox:focus, body .main-home2 .sign-log-container .username-txtbox:focus, body .main-about-body .sign-log-container .username-txtbox:focus,
-body .main-body .sign-log-container .password-txtbox:hover,
-body .main-home .sign-log-container .password-txtbox:hover,
-body .main-home2 .sign-log-container .password-txtbox:hover,
-body .main-about-body .sign-log-container .password-txtbox:hover,
-body .main-body .sign-log-container .password-txtbox:focus,
-body .main-home .sign-log-container .password-txtbox:focus,
-body .main-home2 .sign-log-container .password-txtbox:focus,
-body .main-about-body .sign-log-container .password-txtbox:focus {
-  border-bottom-color: green;
+body .main-body .sign-log-container form .username-container input:focus + .label-text .content-text, body .main-home .sign-log-container form .username-container input:focus + .label-text .content-text, body .main-home2 .sign-log-container form .username-container input:focus + .label-text .content-text, body .main-about-body .sign-log-container form .username-container input:focus + .label-text .content-text,
+body .main-body .sign-log-container form .username-container input:valid + .label-text .content-text,
+body .main-home .sign-log-container form .username-container input:valid + .label-text .content-text,
+body .main-home2 .sign-log-container form .username-container input:valid + .label-text .content-text,
+body .main-about-body .sign-log-container form .username-container input:valid + .label-text .content-text,
+body .main-body .sign-log-container form .password-container input:focus + .label-text .content-text,
+body .main-home .sign-log-container form .password-container input:focus + .label-text .content-text,
+body .main-home2 .sign-log-container form .password-container input:focus + .label-text .content-text,
+body .main-about-body .sign-log-container form .password-container input:focus + .label-text .content-text,
+body .main-body .sign-log-container form .password-container input:valid + .label-text .content-text,
+body .main-home .sign-log-container form .password-container input:valid + .label-text .content-text,
+body .main-home2 .sign-log-container form .password-container input:valid + .label-text .content-text,
+body .main-about-body .sign-log-container form .password-container input:valid + .label-text .content-text {
+  transform: translateY(-100%);
+  font-size: 12.5px;
+}
+
+body .main-body .sign-log-container form .username-container input:focus + .label-text::after, body .main-home .sign-log-container form .username-container input:focus + .label-text::after, body .main-home2 .sign-log-container form .username-container input:focus + .label-text::after, body .main-about-body .sign-log-container form .username-container input:focus + .label-text::after,
+body .main-body .sign-log-container form .username-container input:valid + .label-text::after,
+body .main-home .sign-log-container form .username-container input:valid + .label-text::after,
+body .main-home2 .sign-log-container form .username-container input:valid + .label-text::after,
+body .main-about-body .sign-log-container form .username-container input:valid + .label-text::after,
+body .main-body .sign-log-container form .password-container input:focus + .label-text::after,
+body .main-home .sign-log-container form .password-container input:focus + .label-text::after,
+body .main-home2 .sign-log-container form .password-container input:focus + .label-text::after,
+body .main-about-body .sign-log-container form .password-container input:focus + .label-text::after,
+body .main-body .sign-log-container form .password-container input:valid + .label-text::after,
+body .main-home .sign-log-container form .password-container input:valid + .label-text::after,
+body .main-home2 .sign-log-container form .password-container input:valid + .label-text::after,
+body .main-about-body .sign-log-container form .password-container input:valid + .label-text::after {
+  transform: translateX(0%);
+}
+
+body .main-body .sign-log-container form .username-container .label-text, body .main-home .sign-log-container form .username-container .label-text, body .main-home2 .sign-log-container form .username-container .label-text, body .main-about-body .sign-log-container form .username-container .label-text,
+body .main-body .sign-log-container form .password-container .label-text,
+body .main-home .sign-log-container form .password-container .label-text,
+body .main-home2 .sign-log-container form .password-container .label-text,
+body .main-about-body .sign-log-container form .password-container .label-text {
+  position: absolute;
+  bottom: -8px;
+  left: 0%;
+  width: 70%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid black;
+}
+
+body .main-body .sign-log-container form .username-container .label-text::after, body .main-home .sign-log-container form .username-container .label-text::after, body .main-home2 .sign-log-container form .username-container .label-text::after, body .main-about-body .sign-log-container form .username-container .label-text::after,
+body .main-body .sign-log-container form .password-container .label-text::after,
+body .main-home .sign-log-container form .password-container .label-text::after,
+body .main-home2 .sign-log-container form .password-container .label-text::after,
+body .main-about-body .sign-log-container form .password-container .label-text::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid var(--primary);
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+
+body .main-body .sign-log-container form .username-container .label-text .content-text, body .main-home .sign-log-container form .username-container .label-text .content-text, body .main-home2 .sign-log-container form .username-container .label-text .content-text, body .main-about-body .sign-log-container form .username-container .label-text .content-text,
+body .main-body .sign-log-container form .password-container .label-text .content-text,
+body .main-home .sign-log-container form .password-container .label-text .content-text,
+body .main-home2 .sign-log-container form .password-container .label-text .content-text,
+body .main-about-body .sign-log-container form .password-container .label-text .content-text {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+body .main-body .sign-log-container form .username-container, body .main-home .sign-log-container form .username-container, body .main-home2 .sign-log-container form .username-container, body .main-about-body .sign-log-container form .username-container {
+  padding-top: 55px;
+}
+
+
+body .main-body .sign-log-container form .password-container,
+body .main-home .sign-log-container form .password-container,
+body .main-home2 .sign-log-container form .password-container,
+body .main-about-body .sign-log-container form .password-container {
+  padding-top: 40px;
 }
 
 body .main-body .sign-log-container .log-in-button, body .main-home .sign-log-container .log-in-button, body .main-home2 .sign-log-container .log-in-button, body .main-about-body .sign-log-container .log-in-button {
@@ -11946,11 +12026,23 @@ body .main-body .container.store-container .store-items .btn-add, body .main-hom
   font-size: 0.7rem;
 }
 
+body .main-body .container.store-container .store-items .col .card, body .main-home .container.store-container .store-items .col .card, body .main-home2 .container.store-container .store-items .col .card, body .main-about-body .container.store-container .store-items .col .card, body .main-body .container.store-container .store-items .col footer, body .main-home .container.store-container .store-items .col footer, body .main-home2 .container.store-container .store-items .col footer, body .main-about-body .container.store-container .store-items .col footer {
+  text-align: center;
+  transition: .3s transform, .3s box-shadow;
+}
+
+body .main-body .container.store-container .store-items .col .card .item-price, body .main-home .container.store-container .store-items .col .card .item-price, body .main-home2 .container.store-container .store-items .col .card .item-price, body .main-about-body .container.store-container .store-items .col .card .item-price, body .main-body .container.store-container .store-items .col footer .item-price, body .main-home .container.store-container .store-items .col footer .item-price, body .main-home2 .container.store-container .store-items .col footer .item-price, body .main-about-body .container.store-container .store-items .col footer .item-price {
+  color: #aaaaaa;
+  font-weight: lighter;
+}
+
 body .main-body .container.store-container .store-items .col .card:hover, body .main-home .container.store-container .store-items .col .card:hover, body .main-home2 .container.store-container .store-items .col .card:hover, body .main-about-body .container.store-container .store-items .col .card:hover, body .main-body .container.store-container .store-items .col footer:hover, body .main-home .container.store-container .store-items .col footer:hover, body .main-home2 .container.store-container .store-items .col footer:hover, body .main-about-body .container.store-container .store-items .col footer:hover {
+  transform: scale(1.05);
   box-shadow: 0 0px 1.3px rgba(0, 0, 0, 0.069), 0 0px 4.2px rgba(0, 0, 0, 0.101), 0 0px 19px rgba(0, 0, 0, 0.17);
 }
 
 body .main-body .container.store-container .store-items .col .card:hover .item-price, body .main-home .container.store-container .store-items .col .card:hover .item-price, body .main-home2 .container.store-container .store-items .col .card:hover .item-price, body .main-about-body .container.store-container .store-items .col .card:hover .item-price, body .main-body .container.store-container .store-items .col footer:hover .item-price, body .main-home .container.store-container .store-items .col footer:hover .item-price, body .main-home2 .container.store-container .store-items .col footer:hover .item-price, body .main-about-body .container.store-container .store-items .col footer:hover .item-price {
+  color: var(--primary);
   font-weight: bold;
 }
 
@@ -12085,6 +12177,19 @@ body .main-body .account-main-body .main-row .account-edit.edit-profile .form-gr
   justify-content: center;
   font-size: 0.8rem;
   font-style: italic;
+}
+
+body .main-body .account-main-body .main-row .account-edit.edit-billing th, body .main-home .account-main-body .main-row .account-edit.edit-billing th, body .main-home2 .account-main-body .main-row .account-edit.edit-billing th, body .main-about-body .account-main-body .main-row .account-edit.edit-billing th {
+  text-align: center;
+}
+
+body .main-body .account-main-body .main-row .account-edit.edit-billing .container, body .main-home .account-main-body .main-row .account-edit.edit-billing .container, body .main-home2 .account-main-body .main-row .account-edit.edit-billing .container, body .main-about-body .account-main-body .main-row .account-edit.edit-billing .container {
+  height: 750px;
+  overflow-y: scroll;
+}
+
+body .main-body .account-main-body .main-row .account-edit.edit-billing .container .td-date, body .main-home .account-main-body .main-row .account-edit.edit-billing .container .td-date, body .main-home2 .account-main-body .main-row .account-edit.edit-billing .container .td-date, body .main-about-body .account-main-body .main-row .account-edit.edit-billing .container .td-date {
+  text-align: center;
 }
 
 body .main-body .account-main-body .main-row .account-edit.edit-settings .setting-item .setting-note, body .main-home .account-main-body .main-row .account-edit.edit-settings .setting-item .setting-note, body .main-home2 .account-main-body .main-row .account-edit.edit-settings .setting-item .setting-note, body .main-about-body .account-main-body .main-row .account-edit.edit-settings .setting-item .setting-note {

@@ -11,20 +11,11 @@
   <meta name="author" content="Nadji Tan">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- JQuery -->
-  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Popper -->
-  <script type="text/javascript" src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-  <!-- Tippy -->
   <link rel="stylesheet" href="../node_modules/tippy.js/animations/shift-away.css">
-  <script type="text/javascript" src="../node_modules/tippy.js/dist/tippy-bundle.umd.min.js"></script>
-  <!-- Custom CSS & JS -->
+  <!-- CUSTOM -->
   <link rel="stylesheet" href="../css/custom/mainStyles.css">
-  <script type="text/javascript" src="../js/custom/mainFunctions.js"></script>
-  <script type="text/javascript" src="../js/custom/forms.js"></script>
   
 </head>
 
@@ -67,27 +58,37 @@
   
   <!-- Main Body -->
   <div class="main-body m-0" style="height: 80vh;">
-    <div class="container sign-log-container" style="margin-top: 100px;">
-        <div class="row">
-          <h5 class="text-primary">LOG IN</h5>
+    <div class="container sign-log-container text-center" style="margin-top: 100px;">
+      <form>
+        <label class="lbl-login text-primary" style="text-align: center; font-size: 3rem;">LOG IN</label>
+
+        <div class="username-container">
+          <input class="username-txtbox" id="username" type="text" required maxLength="15"/>
+          <label for="username" class="label-text">
+            <span class="content-text">
+              Username
+            </span> 
+          </label>
         </div>
-        <form>
-          <div class="row mt-5 p-2 txtbox-container">
-            <input class="username-txtbox" id="username" type="text" required="" maxLength="15" placeholder="Username"/>
-          </div>
-          <div class="row mt-4 p-2 txtbox-container">
-            <input class="password-txtbox" id="password" type="password" required="" maxLength="20" placeholder="Password"/>
-          </div>
-          <div class="row mt-1 text-center text-danger" id="alertDiv">
-          </div>
-          <div class="row mt-3">
-            <button class="log-in-button" id="logBtn" onclick="GetInputValue()" type="button">Login</button>
-          </div>
-        </form>
-        <div class="row mt-4">
+        
+        <div class="password-container">
+          <input class="password-txtbox" id="password" type="password" required maxLength="20"/>
+          <label for="password" class="label-text">
+            <span class="content-text">
+              Password
+            </span> 
+          </label>
+        </div>
+        <div class="row mt-1 justify-content-center text-danger" id="alertDiv" style="height: 16px;">
+        </div>
+        <div class="row mt-3 justify-content-center">
+          <button class="log-in-button" onclick="GetInputValue()" type="button">Login</button>
+        </div>
+
+        <div class="row mt-4 justify-content-center">
           Need an account? &nbsp; <a class="nav-link p-0" href="../html/sign_up.html">Sign up</a>
         </div>
-      </div>
+      </form>
     </div>
   </div>
   <!-- End of Main Body -->
@@ -139,6 +140,15 @@
     </div>
   </footer>
   <!-- End Of Footer -->
+
+  <!-- JAVASCRIPT -->
+  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script type="text/javascript" src="../node_modules/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+  <!-- CUSTOM -->
+  <script type="text/javascript" src="../js/custom/mainFunctions.js"></script>
+  <script type="text/javascript" src="../js/custom/forms.js"></script>
 </body>
 
 </html>

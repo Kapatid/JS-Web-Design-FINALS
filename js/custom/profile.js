@@ -64,26 +64,22 @@ function pageFullyLoaded() {
             let itemPricesToString = itemPrices.join('')
 
             /* Data to insert in our html page */
-            let itemRowContent = `<div class="row billing-item-row flex-nowrap">
-                                    <div class="col">
-                                        ${dateTime}
-                                    </div>
-                                     <div class="col text-nowrap">
-                                        ${itemNamesToString}
-                                     </div>
-                                     <div class="col">
-                                        <div class="row justify-content-center mb-2">
-                                            ${itemPricesToString}
-                                        </div>
-
-                                        <div class="row border-top justify-content-center">
-                                            ₱${cartTotal}
-                                        </div>
-                                     </div>
-                                  </div>`
+            let itemRowContent = `<tr>
+                                    <td class="td-date" style="width: 25%">${dateTime}</td>
+                                    <td style="width: 2%">${itemNamesToString}</td>
+                                    <td style="width: 25%"> <div class="col">
+                                          <div class="row justify-content-center mb-2">
+                                              ${itemPricesToString}
+                                          </div>
+                                          <div class="row border-top justify-content-center">
+                                              ₱${cartTotal}
+                                         </div>
+                                         </div>
+                                    </td>
+                                  </tr>`
 
             /* Put itemRowContent in the specified html element by class */
-            $('.edit-billing').append(itemRowContent)
+            $('.billing-item-table').append(itemRowContent)
         }
     }
 

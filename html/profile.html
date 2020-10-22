@@ -4,28 +4,17 @@
 
 <head>
   <title>Profile</title>
-
   <meta charset="utf-8">
   <meta name="description" content="Web design project">
   <meta name="keywords" content="HTML, CSS, SCSS, Bootstrap, JavaScript, JQuery">
   <meta name="author" content="Nadji Tan">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- JQuery -->
-  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Popper -->
-  <script type="text/javascript" src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-  <!-- Tippy -->
   <link rel="stylesheet" href="../node_modules/tippy.js/animations/shift-away.css">
-  <script type="text/javascript" src="../node_modules/tippy.js/dist/tippy-bundle.umd.min.js"></script>
-  <!-- Custom CSS & JS -->
+  <!-- CUSTOM -->
   <link rel="stylesheet" href="../css/custom/mainStyles.css">
-  <script type="text/javascript" src="../js/custom/mainFunctions.js"></script>
-  <script type="text/javascript" src="../js/custom/profile.js"></script>
-  
 </head>
 
 <body class="preload">
@@ -151,18 +140,19 @@
 
         <div class="col account-edit edit-billing">
           <h2>BILLING</h2>
-          <div class="row billing-item-row mt-2 bg-primary text-white flex-nowrap">
-            <div class="col col-title">
-              DATE
-            </div>
-            <div class="col col-title">
-              ITEMS
-            </div>
-            <div class="col col-title">
-              TOTAL PAYMENT
-            </div>
+          <div class="container m-0 p-0">
+            <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">DATE</th>
+                  <th scope="col">ITEM</th>
+                  <th scope="col">TOTAL</th>
+                </tr>
+              </thead>
+              <tbody class="billing-item-table">
+              </tbody>
+            </table>
           </div>
-
         </div>
 
         <div class="col account-edit edit-settings">
@@ -264,6 +254,15 @@
     </div>
   </footer>
   <!-- End Of Footer -->
+
+  <!-- JAVASCRIPT -->
+  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script type="text/javascript" src="../node_modules/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+  <!-- CUSTOM -->
+  <script type="text/javascript" src="../js/custom/mainFunctions.js"></script>
+  <script type="text/javascript" src="../js/custom/profile.js"></script>
 </body>
 
 </html>
