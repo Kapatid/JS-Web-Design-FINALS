@@ -16,7 +16,6 @@ function theDomHasLoaded(e) {
     /* Get user's username and display to page */
     if(stored_loggedin.username != null && stored_loggedin.acc_found == true){
         username = stored_loggedin.username
-        $('#fullNameDisplay').text(username)
         $('#usernameDisplay').text("@" + username)
         $('#inputName').val(username)
     }
@@ -39,6 +38,7 @@ function theDomHasLoaded(e) {
 }
 
 function pageFullyLoaded() {
+    $('#fullNameDisplay').text($(elementIDs[0]).val())
 
     /* On page load load all of the billing information of the user */
     for (var i in storedBilling) {
