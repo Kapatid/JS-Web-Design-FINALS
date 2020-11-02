@@ -7,32 +7,32 @@ function theDomHasLoaded(e) {
 
     if(stored_loggedin.username != null && stored_loggedin.acc_found == true){
         username = stored_loggedin.username;
-        $('#navLoginSignup').hide()
-        $('#accountDropdown').show()
-        $('#navbarDropdown').text(username)
+        $('#navLoginSignup').hide();
+        $('#accountDropdown').show();
+        $('#navbarDropdown').text(username);
     } else {
-        $('#navLoginSignup').show()
-        $('#accountDropdown').hide()
-        $('#navbarDropdown').text('Account')
-    }
+        $('#navLoginSignup').show();
+        $('#accountDropdown').hide();
+        $('#navbarDropdown').text('Account');
+    };
 
     $("body").removeClass("preload");
 
     if ($(".btn-shop-now") != null || $(".btn-shop-now2") != null){
         $(".btn-shop-now, .btn-shop-now2").on("click", () => {
-            window.location.replace("html/store.html")
-        })
-    }
-}
+            window.location.replace("html/store.html");
+        });
+    };
+};
 
 function pageFullyLoaded(e) {
 
-    $('#logoutButton').on('click', LogOut)
+    $('#logoutButton').on('click', LogOut);
 
     function LogOut(){
         var reset_values = [];
         localStorage.setItem('loggedin', JSON.stringify(reset_values)) || [];  /* Save */
-        window.location.replace("../index.html")
+        window.location.replace("../index.html");
       }
 
     $(window).on('scroll', () => {
@@ -43,7 +43,7 @@ function pageFullyLoaded(e) {
         placement: 'bottom',
         animation: 'shift-away'
     });
-}
+};
 
 /* $(function(){
     // Unused because of CORS policy when files are not on a server 
